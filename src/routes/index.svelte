@@ -1,6 +1,17 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
+    import { menu } from "$lib/store";
     import Item from "$lib/Item.svelte";
     import Selection from "$lib/Selection.svelte";
+
+    // Toggle body scroll while selection present
+    onMount(() => {
+        menu.subscribe((mValue: boolean) => {
+            const cssClass: string = 'overflow-hidden';
+            mValue !== undefined ? document.body.classList.add(cssClass) : document.body.classList.remove(cssClass);
+        });
+    });
 </script>
 
 <!-- Selection Modal -->

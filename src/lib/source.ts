@@ -1077,9 +1077,9 @@ export const source: any = {
 
     // Talismans
     talismans: [
-        {path: 'talismans', file: 'MENU_Knowledge_18000.png', label: ''},
-        {path: 'talismans', file: 'MENU_Knowledge_18001.png', label: ''},
-        {path: 'talismans', file: 'MENU_Knowledge_18002.png', label: ''},
+        {path: 'talismans', file: 'MENU_Knowledge_18000.png', label: 'Crimson Amber Medallion'},
+        {path: 'talismans', file: 'MENU_Knowledge_18001.png', label: 'Crimson Amber Medallion +1'},
+        {path: 'talismans', file: 'MENU_Knowledge_18002.png', label: 'Crimson Amber Medallion +2'},
         {path: 'talismans', file: 'MENU_Knowledge_18010.png', label: ''},
         {path: 'talismans', file: 'MENU_Knowledge_18011.png', label: ''},
         {path: 'talismans', file: 'MENU_Knowledge_18012.png', label: ''},
