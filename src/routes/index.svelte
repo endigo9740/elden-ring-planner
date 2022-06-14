@@ -75,31 +75,31 @@
         </div>
     </section>
 
-    <!-- <hr> -->
+    <hr>
 
-    <!-- Hotbar -->
-    <!-- <section class="space-y-4">
-        <h3 class="text-center">Hotbar / Quickbar</h3>
+    <!-- Consumables -->
+    <section class="space-y-4">
+        <h3 class="text-center">Consumables</h3>
         <div class="flex items-center space-x-8">
             <div class="w-[72%] grid grid-cols-5 gap-4">
-                <Item category="hotbar" slot="hotbar_01" placeholder="1"></Item>
-                <Item category="hotbar" slot="hotbar_02" placeholder="2"></Item>
-                <Item category="hotbar" slot="hotbar_03" placeholder="3"></Item>
-                <Item category="hotbar" slot="hotbar_04" placeholder="4"></Item>
-                <Item category="hotbar" slot="hotbar_05" placeholder="5"></Item>
-                <Item category="hotbar" slot="hotbar_06" placeholder="6"></Item>
-                <Item category="hotbar" slot="hotbar_07" placeholder="7"></Item>
-                <Item category="hotbar" slot="hotbar_08" placeholder="8"></Item>
-                <Item category="hotbar" slot="hotbar_09" placeholder="9"></Item>
-                <Item category="hotbar" slot="hotbar_10" placeholder="10"></Item>
+                <Item category="consumables" slot="hotbar_01" placeholder="1"></Item>
+                <Item category="consumables" slot="hotbar_02" placeholder="2"></Item>
+                <Item category="consumables" slot="hotbar_03" placeholder="3"></Item>
+                <Item category="consumables" slot="hotbar_04" placeholder="4"></Item>
+                <Item category="consumables" slot="hotbar_05" placeholder="5"></Item>
+                <Item category="consumables" slot="hotbar_06" placeholder="6"></Item>
+                <Item category="consumables" slot="hotbar_07" placeholder="7"></Item>
+                <Item category="consumables" slot="hotbar_08" placeholder="8"></Item>
+                <Item category="consumables" slot="hotbar_09" placeholder="9"></Item>
+                <Item category="consumables" slot="hotbar_10" placeholder="10"></Item>
             </div>
             <div class="w-[28%] grid grid-cols-2 gap-4">
-                <Item category="hotbar" slot="hotbar_11" placeholder="T"></Item>
-                <Item category="hotbar" slot="hotbar_12" placeholder="R"></Item>
-                <Item category="hotbar" slot="hotbar_13" placeholder="L"></Item>
-                <Item category="hotbar" slot="hotbar_14" placeholder="B"></Item>
+                <Item category="consumables" slot="quickbar_t" placeholder="T"></Item>
+                <Item category="consumables" slot="quickbar_r" placeholder="R"></Item>
+                <Item category="consumables" slot="quickbar_l" placeholder="L"></Item>
+                <Item category="consumables" slot="quickbar_b" placeholder="B"></Item>
             </div>
         </div>
-    </section> -->
+    </section>
 
 </div>
