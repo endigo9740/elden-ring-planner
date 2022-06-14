@@ -1,24 +1,8 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-
-    import { menu } from "$lib/store";
     import Item from "$lib/Item.svelte";
-    import Selection from "$lib/Selection.svelte";
-
-    // Toggle body scroll while selection present
-    onMount(() => {
-        menu.subscribe((mValue: boolean) => {
-            const cssClass: string = 'overflow-hidden';
-            mValue !== undefined ? document.body.classList.add(cssClass) : document.body.classList.remove(cssClass);
-        });
-    });
 </script>
 
-<!-- Selection Modal -->
-<Selection></Selection>
-
-<!-- Equipment -->
-<div id="equipment" class="w-full max-w-[1024px] mx-auto py-8 px-4 space-y-8">
+<div id="equipment" class="w-full max-w-[1200px] mx-auto py-8 px-4 space-y-8">
 
     <!-- Gear -->
     <section class="flex items-center space-x-4">
@@ -45,15 +29,15 @@
                 <!-- Armor: Chest -->
                 <Item category="armors_chests" slot="chest" placeholder="Chest"></Item>
                 <!-- Armor: Hands -->
-                <Item category="armors_hands" slot="hands" placeholder="Hands" class="row-start-2.png"></Item>
+                <Item category="armors_hands" slot="hands" placeholder="Hands" class="flip-horz"></Item>
                 <!-- Armor: Legs -->
-                <Item category="armors_legs" slot="legs" placeholder="Legs" class="row-start-3.png"></Item>
+                <Item category="armors_legs" slot="legs" placeholder="Legs"></Item>
                 <!-- Ammo -->
                 <div class="grid grid-cols-2 gap-4">
-                    <Item category="ammo_arrows" slot="arrow_1" placeholder="Arrow"></Item>
-                    <Item category="ammo_arrows" slot="arrow_2" placeholder="Arrow"></Item>
-                    <Item category="ammo_bolts" slot="bolt_1" placeholder="Bolt"></Item>
-                    <Item category="ammo_bolts" slot="bold_2" placeholder="Bolt"></Item>
+                    <Item category="arrows" slot="arrow_1" placeholder="Arrow"></Item>
+                    <Item category="arrows" slot="arrow_2" placeholder="Arrow"></Item>
+                    <Item category="bolts" slot="bolt_1" placeholder="Bolt"></Item>
+                    <Item category="bolts" slot="bold_2" placeholder="Bolt"></Item>
                 </div>
             </div>
         </div>

@@ -1,6 +1,14 @@
-# create-svelte
+# Elden Ring - Fashion Planner
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## TODO:
+
+* Style improvements
+* Adust data structure to allow subcategories for everything (lean on `object -> array` format?)
+* Implement search feature
+* Add labels for all items
+* Put images behind CDN using AWS Cloudfront, or similar. (NOTE: need thumbnails too!)
+
+---
 
 ## Creating a project
 

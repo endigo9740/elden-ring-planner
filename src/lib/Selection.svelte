@@ -4,6 +4,8 @@
     import { menu, equipment } from "./store";
     import { baseUrl, source } from './source';
 
+    let searchTerm: string = '';
+
     function formatHeading(v: string): string {
         return v.replace('_', ' ');
     }
@@ -43,13 +45,18 @@
     <div class="w-[90%] md:w-[75%] lg:w-[50%] flex flex-col bg-neutral-800" transition:fly|self={{x: 400, duration: 200}}>
 
         <!-- Header -->
-        <header class="bg-neutral-900 flex-none flex justify-between p-4">
+        <header class="flex-none flex justify-between p-4">
             <h2 class="capitalize">{formatHeading($menu.category)}</h2>
             <div class="flex items-center space-x-4">
                 <button type="button" on:click={remove}>Remove</button>
                 <button type="button" on:click={close} class="px-4">&#10005;</button>
             </div>
         </header>
+
+        <!-- Search -->
+        <!-- <input type="search" class="bg-neutral-700 text-white p-4 w-full" bind:value={searchTerm} placeholder="Search..."> -->
+
+        <hr>
 
         <!-- List -->
         <section class="p-4 overflow-y-auto">

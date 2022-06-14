@@ -1195,8 +1195,8 @@ export const source: any = {
         {path: 'talismans', file: 'MENU_Knowledge_18890.png', label: ''},
     ],
 
-    // Ammo
-    ammo_arrows: [
+    // Arrows
+    arrows: [
         {path: 'ammo/arrows', file: 'MENU_Knowledge_17000.png', label: ''},
         {path: 'ammo/arrows', file: 'MENU_Knowledge_17001.png', label: ''},
         {path: 'ammo/arrows', file: 'MENU_Knowledge_17002.png', label: ''},
@@ -1237,7 +1237,9 @@ export const source: any = {
         {path: 'ammo/arrows', file: 'MENU_Knowledge_17104.png', label: ''},
         {path: 'ammo/arrows', file: 'MENU_Knowledge_17105.png', label: ''},
     ],
-    ammo_bolts: [
+
+    // Bolts
+    bolts: [
         {path: 'ammo/bolts', file: 'MENU_Knowledge_17106.png', label: ''},
         {path: 'ammo/bolts', file: 'MENU_Knowledge_17200.png', label: ''},
         {path: 'ammo/bolts', file: 'MENU_Knowledge_17201.png', label: ''},
