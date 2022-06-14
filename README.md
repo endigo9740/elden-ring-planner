@@ -3,7 +3,6 @@
 ## TODO:
 
 * Style improvements
-* Adust data structure to allow subcategories for everything (lean on `object -> array` format?)
 * Implement search feature
 * Add labels for all items
 * Put images behind CDN using AWS Cloudfront, or similar. (NOTE: need thumbnails too!)

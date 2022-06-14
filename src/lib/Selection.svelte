@@ -2,9 +2,7 @@
     import { fade, fly } from 'svelte/transition';
 
     import { menu, equipment } from "./store";
-    import { baseUrl, source } from './source';
-
-    let searchTerm: string = '';
+    import { baseUrl } from './source';
 
     function formatHeading(v: string): string {
         return v.replace('_', ' ');
@@ -43,10 +41,10 @@
 
     <!-- Panel -->
     <div class="w-[90%] md:w-[75%] lg:w-[50%] flex flex-col bg-neutral-800" transition:fly|self={{x: 400, duration: 200}}>
-
+        
         <!-- Header -->
         <header class="flex-none flex justify-between p-4">
-            <h2 class="capitalize">{formatHeading($menu.category)}</h2>
+            <h2 class="capitalize">{$menu.label}</h2>
             <div class="flex items-center space-x-4">
                 <button type="button" on:click={remove}>Remove</button>
                 <button type="button" on:click={close} class="px-4">&#10005;</button>
@@ -58,51 +56,24 @@
 
         <hr>
 
-        <!-- List -->
-        <section class="p-4 overflow-y-auto">
-            {#if source[$menu.category]}
-
-                <!-- Array - Flat List -->
-                {#if Array.isArray(source[$menu.category]) }
-
-                    <nav class="list-none grid grid-cols-4 gap-4">
-                        {#each source[$menu.category] as item}
-                        <li
-                            class="bg-black/20 p-2 rounded-xl hover:bg-neutral-700 cursor-pointer"
-                            class:active={isActive(item)}
-                            on:click={()=>{onSelect(item)}}
-                        >
-                            <img class="w-full aspect-square" src="{baseUrl}/{item.path}/{item.file}" title={item.label} alt={item.label} loading="lazy">
-                        </li>
-                        {/each}
-                    </nav>
-
-                <!-- Object - Sectioned List -->
-                {:else}
-
-                    <div class="flex-auto space-y-4">
-
-                        {#each Object.entries(source[$menu.category]) as [catName, catList]}
-                        <h3 class="capitalize">{formatHeading(catName)}</h3>
-                        <nav class="list-none bg-black/10 p-4 grid grid-cols-4 gap-4">
-                            {#each castArray(catList) as item}
-                            <li
-                                class="bg-black/20 p-2 rounded-xl hover:bg-neutral-700 cursor-pointer"
-                                class:active={isActive(item)}
-                                on:click={()=>{onSelect(item)}}
-                            >
-                                <img class="w-full aspect-square" src="{baseUrl}/{item.path}/{item.file}" title={item.label} alt={item.label} loading="lazy">
-                            </li>
-                            {/each}
-                        </nav>
-                        {/each}
-                    </div>
-
-                {/if}
-
-            {:else}
-            <p class="bg-black/20 p-4 text-center">No sources for <strong>{$menu.category}</strong>.</p>
-            {/if}
+        <!-- Item Selection -->
+        <section class="p-4 flex-auto space-y-4 overflow-y-auto">
+            {#each Object.entries($menu.source) as [catName, catList]}
+                <!-- Subtitle -->
+                {#if catName !== '_'}<h3 class="capitalize">{formatHeading(catName)}</h3>{/if}
+                <!-- List -->
+                <nav class="list-none grid grid-cols-4 gap-4">
+                    {#each castArray(catList) as item}
+                    <li
+                        class="bg-black/20 p-2 rounded-xl hover:bg-neutral-700 cursor-pointer"
+                        class:active={isActive(item)}
+                        on:click={()=>{onSelect(item)}}
+                    >
+                        <img class="w-full aspect-square" src="{baseUrl}/{item.path}/{item.file}" title={item.label} alt={item.label} loading="lazy">
+                    </li>
+                    {/each}
+                </nav>
+            {/each}
         </section>
 
     </div>
