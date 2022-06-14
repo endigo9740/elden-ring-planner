@@ -34,10 +34,13 @@
 </script>
 
 {#if $menu}
-<div class="bg-black/70 fixed z-50 w-full h-full flex justify-center items-center p-4" transition:fade={{duration: 100}}>
+<div class="fixed z-50 w-full h-full flex bg-black/70" transition:fade|self={{duration: 100}}>
+
+    <!-- Shim -->
+    <div class="flex-auto" on:click={close}></div>
 
     <!-- Panel -->
-    <div class="fixed top-0 right-0 bottom-0 w-[90%] md:w-[75%] lg:w-[50%] flex flex-col bg-neutral-800" transition:fly={{x: 400, duration: 200}}>
+    <div class="w-[90%] md:w-[75%] lg:w-[50%] flex flex-col bg-neutral-800" transition:fly|self={{x: 400, duration: 200}}>
 
         <!-- Header -->
         <header class="bg-neutral-900 flex-none flex justify-between p-4">
@@ -55,14 +58,14 @@
                 <!-- Array - Flat List -->
                 {#if Array.isArray(source[$menu.category]) }
 
-                    <nav class="list-none rounded-xl grid grid-cols-4 gap-4">
+                    <nav class="list-none grid grid-cols-4 gap-4">
                         {#each source[$menu.category] as item}
                         <li
-                            class="bg-black/20 p-1 rounded-xl hover:bg-neutral-700 cursor-pointer"
+                            class="bg-black/20 p-2 rounded-xl hover:bg-neutral-700 cursor-pointer"
                             class:active={isActive(item)}
                             on:click={()=>{onSelect(item)}}
                         >
-                            <img src="{baseUrl}/{item.path}/{item.file}" title={item.label} alt={item.label} loading=lazy>
+                            <img class="w-full aspect-square" src="{baseUrl}/{item.path}/{item.file}" title={item.label} alt={item.label} loading="lazy">
                         </li>
                         {/each}
                     </nav>
@@ -74,14 +77,14 @@
 
                         {#each Object.entries(source[$menu.category]) as [catName, catList]}
                         <h3 class="capitalize">{formatHeading(catName)}</h3>
-                        <nav class="list-none bg-black/10 p-4 rounded-xl grid grid-cols-4 gap-4">
+                        <nav class="list-none bg-black/10 p-4 grid grid-cols-4 gap-4">
                             {#each castArray(catList) as item}
                             <li
-                                class="bg-black/20 p-1 rounded-xl hover:bg-neutral-700 cursor-pointer"
+                                class="bg-black/20 p-2 rounded-xl hover:bg-neutral-700 cursor-pointer"
                                 class:active={isActive(item)}
                                 on:click={()=>{onSelect(item)}}
                             >
-                                <img src="{baseUrl}/{item.path}/{item.file}" title={item.label} alt={item.label} loading=lazy>
+                                <img class="w-full aspect-square" src="{baseUrl}/{item.path}/{item.file}" title={item.label} alt={item.label} loading="lazy">
                             </li>
                             {/each}
                         </nav>
@@ -100,5 +103,5 @@
 {/if}
 
 <style lang="postcss">
-    .active { @apply !bg-white/50 text-black; }
+    .active { @apply !bg-neutral-200/50 text-black; }
 </style>

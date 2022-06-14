@@ -16,3 +16,9 @@ h3 { @apply text-2xl font-bold; }
 h4 { @apply text-xl font-bold; }
 h5 { @apply text-lg font-bold; }
 h6 { @apply text-base font-bold; }
+
+/* Scrollbars */
+
+::-webkit-scrollbar { @apply bg-neutral-700 w-[5px];}
+::-webkit-scrollbar-track { @apply shadow; }
+::-webkit-scrollbar-thumb { @apply bg-neutral-500; }
