@@ -1,6 +1,6 @@
 // CREDIT: image source provided by SkeleMann: https://twitter.com/SkeleMann/status/1509149096329854985
 
-export const baseUrl: string = 'http://cdn.endigodesign.com.s3-us-east-2.amazonaws.com/elden_ring/size-320';
+export const baseUrl: string = 'https://s3.us-east-2.amazonaws.com/cdn.endigodesign.com/elden_ring/size-320';
 
 // Sources --- (underscore for hidden label)
 export const source: any = {
