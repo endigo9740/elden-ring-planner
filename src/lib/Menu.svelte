@@ -35,7 +35,7 @@
         let castListArr: any[] = Array.from(catList);
         // Filter by search
         castListArr = castListArr.filter((item: any) => {
-            return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+            return JSON.stringify(item).toLowerCase().includes(searchTerm.toLowerCase());
         });
         // Sort alphabetically by name (NOTE: keep manual sort?)
         // castListArr = castListArr.sort((a, b) => a.name < b.name ? -1 : 1);

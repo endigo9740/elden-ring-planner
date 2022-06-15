@@ -46,3 +46,7 @@ https://github.com/sveltejs/kit/tree/master/packages/adapter-static
 ### General Instruction
 
 https://svelteland.github.io/svelte-kit-blog-demo/deply-to-github/
+
+## Credits
+
+Images assets provided by SkeleMann: https://twitter.com/SkeleMann/status/1509149096329854985

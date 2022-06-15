@@ -1,4 +1,4 @@
-// CREDIT: image source provided by SkeleMann: https://twitter.com/SkeleMann/status/1509149096329854985
+// CREDIT: image assets provided by SkeleMann: https://twitter.com/SkeleMann/status/1509149096329854985
 
 export const baseUrl: string = 'https://s3.us-east-2.amazonaws.com/cdn.endigodesign.com/elden_ring/size-320';
 
@@ -1290,46 +1290,45 @@ export const source: any = {
     
     // Spells
     spells: {
-
         // Incantations
         beastial: [
-            {path: 'spells/incantations/beastial/06400.png', name: ``},
-            {path: 'spells/incantations/beastial/06401.png', name: ``},
-            {path: 'spells/incantations/beastial/06402.png', name: ``},
-            {path: 'spells/incantations/beastial/06403.png', name: ``},
-            {path: 'spells/incantations/beastial/06500.png', name: ``},
-            {path: 'spells/incantations/beastial/06503.png', name: ``},
-            {path: 'spells/incantations/beastial/06810.png', name: ``},
+            {path: 'spells/incantations/beastial/06400.png', name: `Bestial Sling`},
+            {path: 'spells/incantations/beastial/06402.png', name: `Beast Claw`},
+            {path: 'spells/incantations/beastial/06401.png', name: `Stone of Gurranq`},
+            {path: 'spells/incantations/beastial/06403.png', name: `Gurranq's Beast Claw`},
+            {path: 'spells/incantations/beastial/06500.png', name: `Bestial Vitality`},
+            {path: 'spells/incantations/beastial/06503.png', name: `Bestial Constitution`},
+            // {path: 'spells/incantations/beastial/06810.png', name: ``},
         ],
         black_flame: [
-            {path: 'spells/incantations/black-flame/06055.png', name: ``},
-            {path: 'spells/incantations/black-flame/06203.png', name: ``},
-            {path: 'spells/incantations/black-flame/06210.png', name: ``},
-            {path: 'spells/incantations/black-flame/06214.png', name: ``},
-            {path: 'spells/incantations/black-flame/06306.png', name: ``},
-            {path: 'spells/incantations/black-flame/06310.png', name: ``},
+            {path: 'spells/incantations/black-flame/06306.png', name: `Black Flame Blade`},
+            {path: 'spells/incantations/black-flame/06203.png', name: `Black Flame`},
+            {path: 'spells/incantations/black-flame/06210.png', name: `Scouring Black Flame`},
+            {path: 'spells/incantations/black-flame/06214.png', name: `Black Flame Ritual`},
+            {path: 'spells/incantations/black-flame/06055.png', name: `Nobel Presence`},
+            {path: 'spells/incantations/black-flame/06310.png', name: `Black Flame's Protection`},
         ],
         blood: [
-            {path: 'spells/incantations/blood/06056.png', name: ``},
-            {path: 'spells/incantations/blood/06254.png', name: ``},
-            {path: 'spells/incantations/blood/06307.png', name: ``},
-            {path: 'spells/incantations/blood/06611.png', name: ``},
+            {path: 'spells/incantations/blood/06307.png', name: `Bloodflame Blade`},
+            {path: 'spells/incantations/blood/06611.png', name: `Swarm of Flies`},
+            {path: 'spells/incantations/blood/06056.png', name: `Bloodflame Talons`},
+            {path: 'spells/incantations/blood/06254.png', name: `Bloodboon`},
         ],
         dragon_communion: [
-            {path: 'spells/incantations/dragon-communion/06080.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06081.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06082.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06083.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06084.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06085.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06086.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06087.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06088.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06089.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06090.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06091.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06092.png', name: ``},
-            {path: 'spells/incantations/dragon-communion/06105.png', name: ``},
+            {path: 'spells/incantations/dragon-communion/06090.png', name: `Dragonclaw`},
+            {path: 'spells/incantations/dragon-communion/06091.png', name: `Dragonmaw`},
+            {path: 'spells/incantations/dragon-communion/06092.png', name: `Greyoll's Roar`},
+            {path: 'spells/incantations/dragon-communion/06080.png', name: `Dragonfire`},
+            {path: 'spells/incantations/dragon-communion/06081.png', name: `Agheel's Flame`},
+            {path: 'spells/incantations/dragon-communion/06082.png', name: `Magma Breath`},
+            {path: 'spells/incantations/dragon-communion/06105.png', name: `Theodorix's Magma`},
+            {path: 'spells/incantations/dragon-communion/06083.png', name: `Dragonice`},
+            {path: 'spells/incantations/dragon-communion/06084.png', name: `Borealis's Mist`},
+            {path: 'spells/incantations/dragon-communion/06085.png', name: `Rotten Breath`},
+            {path: 'spells/incantations/dragon-communion/06086.png', name: `Ekzykes's Decay`},
+            {path: 'spells/incantations/dragon-communion/06087.png', name: `Glinstone Breath`},
+            {path: 'spells/incantations/dragon-communion/06088.png', name: `Smarag's Glintstone Breath`},
+            {path: 'spells/incantations/dragon-communion/06089.png', name: `Placidusax's Ruin`},
         ],
         dragon_cult: [
             {path: 'spells/incantations/dragon-cult/06069.png', name: ``},
@@ -1419,7 +1418,6 @@ export const source: any = {
             {path: 'spells/incantations/two-fingers/06710.png', name: ``},
             {path: 'spells/incantations/two-fingers/06711.png', name: ``},
         ],
-
         // Sorceries
         aberrant: [
             {path: 'spells/sorceries/aberrant/06046.png', name: ``},
