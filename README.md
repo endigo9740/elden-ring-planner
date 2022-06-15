@@ -3,7 +3,6 @@
 ## TODO:
 
 * Style improvements
-* Implement search feature
 * Add labels for all items
 * Put images behind CDN using AWS Cloudfront, or similar. (NOTE: need thumbnails too!)
 

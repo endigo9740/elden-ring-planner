@@ -4,6 +4,8 @@
     import { menu, equipment } from "./store";
     import { baseUrl } from './source';
 
+    let searchTerm: string = '';
+
     function formatHeading(v: string): string {
         return v.replace('_', ' ');
     }
@@ -11,10 +13,6 @@
     function isActive(item: any): boolean {
         if (!$equipment[$menu.slot]) return false;
         return item.file === $equipment[$menu.slot].file
-    }
-
-    function castArray(arrayLike: any): any[] {
-        return Array.from(arrayLike);
     }
 
     function onSelect(v: any): void {
@@ -30,6 +28,19 @@
 
     function close(): void {
         menu.set(undefined);
+    }
+
+    // Reactive
+    $: itemsFiltered = (catList: any): any[] => {
+        let castListArr: any[] = Array.from(catList);
+        // Filter by search
+        castListArr = castListArr.filter((item: any) => {
+            return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+        });
+        // Sort alphabetically by name
+        // castListArr = castListArr.sort((a, b) => a.name < b.name ? -1 : 1);
+        // Return
+        return castListArr;
     }
 </script>
 
@@ -52,7 +63,7 @@
         </header>
 
         <!-- Search -->
-        <!-- <input type="search" class="bg-neutral-700 text-white p-4 w-full" bind:value={searchTerm} placeholder="Search..."> -->
+        <input type="search" class="bg-neutral-700 text-white p-4 w-full" bind:value={searchTerm} placeholder="Search...">
 
         <hr>
 
@@ -63,14 +74,14 @@
                 {#if catName !== '_'}<h3 class="capitalize">{formatHeading(catName)}</h3>{/if}
                 <!-- List -->
                 <nav class="list-none grid grid-cols-4 gap-4">
-                    {#each castArray(catList) as item}
-                    <li
-                        class="bg-black/20 p-2 rounded-xl hover:bg-neutral-700 cursor-pointer"
-                        class:active={isActive(item)}
-                        on:click={()=>{onSelect(item)}}
-                    >
-                        <img class="w-full aspect-square" src="{baseUrl}/{item.path}/{item.file}" title={item.label} alt={item.label} loading="lazy">
-                    </li>
+                    {#each itemsFiltered(catList) as item}
+                        <li
+                            class="bg-black/20 p-2 rounded-xl hover:bg-neutral-700 cursor-pointer"
+                            class:active={isActive(item)}
+                            on:click={()=>{onSelect(item)}}
+                        >
+                            <img class="w-full aspect-square" src="{baseUrl}/{item.path}/{item.file}" title={item.name} alt={item.name} loading="lazy">
+                        </li>
                     {/each}
                 </nav>
             {/each}
