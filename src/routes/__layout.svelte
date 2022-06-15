@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 
     import { menu } from "$lib/store";
-    import Selection from "$lib/Selection.svelte";
+    import Menu from "$lib/Menu.svelte";
     
 	import '../app.css';
 
@@ -19,7 +19,5 @@
 	<title>Elden Ring - Fashion Planner</title>
 </svelte:head>
 
-<!-- Selection Modal -->
-<Selection></Selection>
-
+<Menu></Menu>
 <slot />

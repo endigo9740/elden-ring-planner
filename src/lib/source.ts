@@ -9,7 +9,7 @@ export const source: any = {
     armors: {
         helms: {
             _: [
-                {path: 'armor/helms/MENU_Knowledge_13000.png', name: ``},
+                {path: 'armor/helms/MENU_Knowledge_13000.png', name: `Iron Helmet`},
                 {path: 'armor/helms/MENU_Knowledge_13010.png', name: ``},
                 {path: 'armor/helms/MENU_Knowledge_13020.png', name: ``},
                 {path: 'armor/helms/MENU_Knowledge_13030.png', name: ``},
@@ -189,7 +189,7 @@ export const source: any = {
         },
         chests: {
             _: [
-                {path: 'armor/chests/MENU_Knowledge_13001.png', name: ``},
+                {path: 'armor/chests/MENU_Knowledge_13001.png', name: `Scale Armor`},
                 {path: 'armor/chests/MENU_Knowledge_13011.png', name: ``},
                 {path: 'armor/chests/MENU_Knowledge_13021.png', name: ``},
                 {path: 'armor/chests/MENU_Knowledge_13031.png', name: ``},
@@ -409,7 +409,7 @@ export const source: any = {
         },
         hands: {
             _: [
-                {path: 'armor/hands/MENU_Knowledge_13002.png', name: ``},
+                {path: 'armor/hands/MENU_Knowledge_13002.png', name: `Iron Gauntlets`},
                 {path: 'armor/hands/MENU_Knowledge_13012.png', name: ``},
                 {path: 'armor/hands/MENU_Knowledge_13022.png', name: ``},
                 {path: 'armor/hands/MENU_Knowledge_13042.png', name: ``},
@@ -515,7 +515,7 @@ export const source: any = {
         },
         legs: {
             _: [
-                {path: 'armor/legs/MENU_Knowledge_13003.png', name: ``},
+                {path: 'armor/legs/MENU_Knowledge_13003.png', name: `Leather Trousers`},
                 {path: 'armor/legs/MENU_Knowledge_13013.png', name: ``},
                 {path: 'armor/legs/MENU_Knowledge_13023.png', name: ``},
                 {path: 'armor/legs/MENU_Knowledge_13043.png', name: ``},

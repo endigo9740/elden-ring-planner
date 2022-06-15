@@ -51,7 +51,7 @@
     <div class="flex-auto" on:click={close}></div>
 
     <!-- Panel -->
-    <div class="bg-gold-bg w-[90%] md:w-[75%] lg:w-[50%] flex flex-col" transition:fly|self={{x: 400, duration: 200}}>
+    <div class="bg-gold-bg w-[90%] md:w-[75%] lg:w-[45%] flex flex-col" transition:fly|self={{x: 400, duration: 200}}>
         
         <!-- Header -->
         <header class="flex-none flex justify-between p-4">
@@ -77,7 +77,7 @@
                 <!-- Subtitle -->
                 {#if catName !== '_'}<h3 class="capitalize">{formatHeading(catName)}</h3>{/if}
                 <!-- List -->
-                <nav class="list-none grid grid-cols-4 gap-4">
+                <nav class="list-none grid grid-cols-3 gap-4">
                     {#each itemsFiltered(catList) as item}
                         <li
                             class="border border-gold-md bg-gold-md/20 p-2 rounded-xl hover:bg-gold-lt cursor-pointer"
