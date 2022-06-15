@@ -1,10 +1,5 @@
 # Elden Ring - Fashion Planner
 
-## TODO:
-
-* Put images behind CDN using AWS Cloudfront, or similar. (NOTE: need thumbnails too!)
-* Add labels for all items
-
 ---
 
 ## Creating a project
