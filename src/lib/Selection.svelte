@@ -7,12 +7,12 @@
     let searchTerm: string = '';
 
     function formatHeading(v: string): string {
-        return v.replace('_', ' ');
+        return v.replaceAll('_', ' ');
     }
 
     function isActive(item: any): boolean {
         if (!$equipment[$menu.slot]) return false;
-        return item.file === $equipment[$menu.slot].file
+        return item.path === $equipment[$menu.slot].path;
     }
 
     function onSelect(v: any): void {
@@ -37,7 +37,7 @@
         castListArr = castListArr.filter((item: any) => {
             return item.name.toLowerCase().includes(searchTerm.toLowerCase());
         });
-        // Sort alphabetically by name
+        // Sort alphabetically by name (NOTE: keep manual sort?)
         // castListArr = castListArr.sort((a, b) => a.name < b.name ? -1 : 1);
         // Return
         return castListArr;
@@ -80,7 +80,7 @@
                             class:active={isActive(item)}
                             on:click={()=>{onSelect(item)}}
                         >
-                            <img class="w-full aspect-square" src="{baseUrl}/{item.path}/{item.file}" title={item.name} alt={item.name} loading="lazy">
+                            <img class="w-full aspect-square" src="{baseUrl}/{item.path}" title={item.name} alt={item.name} loading="lazy">
                         </li>
                     {/each}
                 </nav>
