@@ -45,13 +45,13 @@
 </script>
 
 {#if $menu}
-<div class="fixed z-50 w-full h-full flex bg-black/70" transition:fade|self={{duration: 100}}>
+<div class="fixed z-50 w-full h-full flex bg-gold-md/50" transition:fade|self={{duration: 100}}>
 
     <!-- Shim -->
     <div class="flex-auto" on:click={close}></div>
 
     <!-- Panel -->
-    <div class="w-[90%] md:w-[75%] lg:w-[50%] flex flex-col bg-neutral-800" transition:fly|self={{x: 400, duration: 200}}>
+    <div class="bg-gold-bg w-[90%] md:w-[75%] lg:w-[50%] flex flex-col" transition:fly|self={{x: 400, duration: 200}}>
         
         <!-- Header -->
         <header class="flex-none flex justify-between p-4">
@@ -62,8 +62,12 @@
             </div>
         </header>
 
+        <hr>
+
         <!-- Search -->
-        <input type="search" class="bg-neutral-700 text-white p-4 w-full" bind:value={searchTerm} placeholder="Search...">
+        <section class="p-4">
+            <input type="search" class="border border-gold-md focus:border-gold-lt/50 bg-gold-md/50 text-white placeholder:text-white/50 px-3 py-2 w-full outline-none rounded-lg" bind:value={searchTerm} placeholder="Search...">
+        </section>
 
         <hr>
 
@@ -76,11 +80,12 @@
                 <nav class="list-none grid grid-cols-4 gap-4">
                     {#each itemsFiltered(catList) as item}
                         <li
-                            class="bg-black/20 p-2 rounded-xl hover:bg-neutral-700 cursor-pointer"
-                            class:active={isActive(item)}
+                            class="border border-gold-md bg-gold-md/20 p-2 rounded-xl hover:bg-gold-lt cursor-pointer"
+                            class:bg-gold-md={isActive(item)}
                             on:click={()=>{onSelect(item)}}
                         >
                             <img class="w-full aspect-square" src="{baseUrl}/{item.path}" title={item.name} alt={item.name} loading="lazy">
+                            <p class="text-[10px] lg:text-xs text-white/50 text-center text-ellipsis overflow-hidden mt-2">{item.name}</p>
                         </li>
                     {/each}
                 </nav>
@@ -90,7 +95,3 @@
     </div>
 </div>
 {/if}
-
-<style lang="postcss">
-    .active { @apply !bg-neutral-200/50 text-black; }
-</style>
