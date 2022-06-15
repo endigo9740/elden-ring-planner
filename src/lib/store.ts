@@ -1,6 +1,6 @@
 import { writable, type Writable } from 'svelte/store';
 
-// Selection Menu - contains: {category, slot}
+// Selection Menu - contains: {category, slot, label}
 export const menu: Writable<any> = writable(undefined);
 
 // Equipment
