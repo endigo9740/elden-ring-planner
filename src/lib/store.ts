@@ -67,6 +67,7 @@ export const equipment: Writable<any> = writable(equipmentDefaults);
 export const clearAllItems = (): void => {
     const newObj = {...equipmentDefaults, ...{}};
     equipment.set(newObj);
+    localStorage.clear();
 };
 
 // Persist stores to LocalStroage
