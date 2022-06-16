@@ -49,10 +49,10 @@
                 <Item source={source.armors.legs} slot="legs" label="Legs"></Item>
                 <!-- Ammo -->
                 <div class="grid grid-cols-2 gap-4">
-                    <Item source={source.arrows} slot="arrow_1" label="Arrow"></Item>
-                    <Item source={source.arrows} slot="arrow_2" label="Arrow"></Item>
-                    <Item source={source.bolts} slot="bolt_1" label="Bolt"></Item>
-                    <Item source={source.bolts} slot="bold_2" label="Bolt"></Item>
+                    <Item source={source.ammo.arrows} slot="arrow_1" label="Arrow"></Item>
+                    <Item source={source.ammo.arrows} slot="arrow_2" label="Arrow"></Item>
+                    <Item source={source.ammo.bolts} slot="bolt_1" label="Bolt"></Item>
+                    <Item source={source.ammo.bolts} slot="bold_2" label="Bolt"></Item>
                 </div>
             </div>
         </div>
