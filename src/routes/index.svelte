@@ -1,13 +1,23 @@
 <script lang="ts">
     import Item from "$lib/Item.svelte";
     import { source } from "$lib/source";
+    import { clearAllItems } from "$lib/store";
+
+    function clear(): void {
+        if (confirm('Are you sure you want to clear all items?')) {
+            clearAllItems();
+        }
+    }
 </script>
 
 <div id="equipment" class="w-full max-w-[1024px] mx-auto py-8 px-4 space-y-8">
     
-    <header>
-        <h3 class="text-center outline-none" spellcheck="false" contenteditable>Enter Character Name...</h3>
+    <header class="flex justify-between">
+        <h3 class="text-center outline-none" spellcheck="false" contenteditable>Enter Name...</h3>
+        <button type="button" on:click={clear}>Clear</button>
     </header>
+
+    <hr>
 
     <!-- Gear -->
     <section class="block md:flex items-center space-y-8 md:space-y-0 md:space-x-4">
@@ -98,6 +108,7 @@
 
     <hr>
     
+    <!-- Footer -->
     <footer class="flex justify-between space-x-8">
         <a href="https://github.com/endigo9740/elden-ring-planner" target="_blank">Contribute on Github</a>
         <a href="https://endigodesign.com/" target="_blank">By Endigo</a>

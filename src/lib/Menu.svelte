@@ -23,7 +23,7 @@
     }
 
     function remove(): void {
-        onSelect(undefined);
+        onSelect(null);
     }
 
     function close(): void {
