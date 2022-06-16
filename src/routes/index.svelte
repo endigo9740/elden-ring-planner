@@ -13,7 +13,7 @@
 <div id="equipment" class="w-full max-w-[1024px] mx-auto py-8 px-4 space-y-8">
     
     <header class="flex justify-between">
-        <h3 class="text-center outline-none" spellcheck="false" contenteditable>Enter Name...</h3>
+        <h3>Fashion Planner</h3>
         <button type="button" on:click={clear}>Clear</button>
     </header>
 
