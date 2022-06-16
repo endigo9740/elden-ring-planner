@@ -3,20 +3,24 @@
     import { source } from "$lib/source";
 </script>
 
-<div id="equipment" class="w-full max-w-[1200px] mx-auto py-8 px-4 space-y-8">
+<div id="equipment" class="w-full max-w-[1024px] mx-auto py-8 px-4 space-y-8">
+    
+    <header>
+        <h3 class="text-center outline-none" spellcheck="false" contenteditable>Enter Character Name...</h3>
+    </header>
 
     <!-- Gear -->
-    <section class="flex items-center space-x-4">
+    <section class="block md:flex items-center space-y-8 md:space-y-0 md:space-x-4">
 
         <!-- Left Hand -->
-        <div class="w-[20%] grid grid-cols-1 gap-4">
+        <div class="md:w-[20%] grid grid-cols-3 md:grid-cols-1 gap-4">
             <Item source={source.armaments} slot="armaments_1" label="Left 1"></Item>
             <Item source={source.armaments} slot="armaments_2" label="Left 2"></Item>
             <Item source={source.armaments} slot="armaments_3" label="Left 3"></Item>
         </div>
 
         <!-- Body -->
-        <div class="w-[60%] space-y-4">
+        <div class="md:w-[60%] space-y-4">
             <div class="grid grid-cols-2 gap-4">
                 <!-- Armor: Head -->
                 <Item source={source.armors.helms} slot="helm" label="Helm"></Item>
@@ -44,7 +48,7 @@
         </div>
 
         <!-- Right Hand -->
-        <div class="w-[20%] grid grid-cols-1 gap-4">
+        <div class="md:w-[20%] grid grid-cols-3 md:grid-cols-1 gap-4">
             <Item source={source.armaments} slot="armaments_4" label="Right 1"></Item>
             <Item source={source.armaments} slot="armaments_5" label="Right 2"></Item>
             <Item source={source.armaments} slot="armaments_6" label="Right 3"></Item>
@@ -55,47 +59,48 @@
     <hr>
     
     <!-- Spells -->
-    <section class="space-y-4">
-        <h3 class="text-center">Spells</h3>
-        <div class="grid grid-cols-5 gap-4">
-            <Item source={source.spells} slot="spell_01" label="Spell 1"></Item>
-            <Item source={source.spells} slot="spell_02" label="Spell 2"></Item>
-            <Item source={source.spells} slot="spell_03" label="Spell 3"></Item>
-            <Item source={source.spells} slot="spell_04" label="Spell 4"></Item>
-            <Item source={source.spells} slot="spell_05" label="Spell 5"></Item>
-            <Item source={source.spells} slot="spell_06" label="Spell 6"></Item>
-            <Item source={source.spells} slot="spell_07" label="Spell 7"></Item>
-            <Item source={source.spells} slot="spell_08" label="Spell 8"></Item>
-            <Item source={source.spells} slot="spell_09" label="Spell 9"></Item>
-            <Item source={source.spells} slot="spell_10" label="Spell 10"></Item>
-        </div>
+    <section class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <Item source={source.spells} slot="spell_01" label="Spell 1"></Item>
+        <Item source={source.spells} slot="spell_02" label="Spell 2"></Item>
+        <Item source={source.spells} slot="spell_03" label="Spell 3"></Item>
+        <Item source={source.spells} slot="spell_04" label="Spell 4"></Item>
+        <Item source={source.spells} slot="spell_05" label="Spell 5"></Item>
+        <Item source={source.spells} slot="spell_06" label="Spell 6"></Item>
+        <Item source={source.spells} slot="spell_07" label="Spell 7"></Item>
+        <Item source={source.spells} slot="spell_08" label="Spell 8"></Item>
+        <Item source={source.spells} slot="spell_09" label="Spell 9"></Item>
+        <Item source={source.spells} slot="spell_10" label="Spell 10"></Item>
     </section>
 
     <hr>
 
-    <!-- Consumables -->
-    <section class="space-y-4">
-        <h3 class="text-center">Consumables</h3>
-        <div class="flex items-center space-x-8">
-            <div class="w-[72%] grid grid-cols-5 gap-4">
-                <Item source={source.consumables} slot="hotbar_01" label="Item 1"></Item>
-                <Item source={source.consumables} slot="hotbar_02" label="Item 2"></Item>
-                <Item source={source.consumables} slot="hotbar_03" label="Item 3"></Item>
-                <Item source={source.consumables} slot="hotbar_04" label="Item 4"></Item>
-                <Item source={source.consumables} slot="hotbar_05" label="Item 5"></Item>
-                <Item source={source.consumables} slot="hotbar_06" label="Item 6"></Item>
-                <Item source={source.consumables} slot="hotbar_07" label="Item 7"></Item>
-                <Item source={source.consumables} slot="hotbar_08" label="Item 8"></Item>
-                <Item source={source.consumables} slot="hotbar_09" label="Item 9"></Item>
-                <Item source={source.consumables} slot="hotbar_10" label="Item 10"></Item>
-            </div>
-            <div class="w-[28%] grid grid-cols-2 gap-4">
-                <Item source={source.consumables} slot="quickbar_t" label="Top"></Item>
-                <Item source={source.consumables} slot="quickbar_r" label="Right"></Item>
-                <Item source={source.consumables} slot="quickbar_l" label="left"></Item>
-                <Item source={source.consumables} slot="quickbar_b" label="Bottom"></Item>
-            </div>
+    <!-- Quickslots -->
+    <section class="md:flex items-center space-y-8 md:space-y-0 md:space-x-8">
+        <div class="md:w-[72%] grid grid-cols-2 md:grid-cols-5 gap-4">
+            <Item source={source.consumables} slot="hotbar_01" label="Item 1"></Item>
+            <Item source={source.consumables} slot="hotbar_02" label="Item 2"></Item>
+            <Item source={source.consumables} slot="hotbar_03" label="Item 3"></Item>
+            <Item source={source.consumables} slot="hotbar_04" label="Item 4"></Item>
+            <Item source={source.consumables} slot="hotbar_05" label="Item 5"></Item>
+            <Item source={source.consumables} slot="hotbar_06" label="Item 6"></Item>
+            <Item source={source.consumables} slot="hotbar_07" label="Item 7"></Item>
+            <Item source={source.consumables} slot="hotbar_08" label="Item 8"></Item>
+            <Item source={source.consumables} slot="hotbar_09" label="Item 9"></Item>
+            <Item source={source.consumables} slot="hotbar_10" label="Item 10"></Item>
+        </div>
+        <div class="md:w-[28%] grid grid-cols-2 gap-4">
+            <Item source={source.consumables} slot="quickbar_t" label="Top"></Item>
+            <Item source={source.consumables} slot="quickbar_r" label="Right"></Item>
+            <Item source={source.consumables} slot="quickbar_l" label="left"></Item>
+            <Item source={source.consumables} slot="quickbar_b" label="Bottom"></Item>
         </div>
     </section>
+
+    <hr>
+    
+    <footer class="flex justify-between space-x-8">
+        <a href="https://github.com/endigo9740/elden-ring-planner" target="_blank">Contribute on Github</a>
+        <a href="https://endigodesign.com/" target="_blank">By Endigo</a>
+    </footer>
 
 </div>

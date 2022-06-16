@@ -1,22 +1,10 @@
 # Elden Ring - Fashion Planner
 
----
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte
-
-# create a new project in my-app
-npm init svelte my-app
-```
+This tool allows you to visually plan your character's equipment, spells, and items for Elden Ring.
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
@@ -27,7 +15,6 @@ npm run dev -- --open
 
 ## Building
 
-To create a production version of your app:
 
 ```bash
 npm run build
@@ -35,18 +22,28 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+---
 
-## Github Pages
+## Contributing
+
+Found a bug, caught a typo, or want to contribute an improvement? Please feel free to send a pull request. Thanks!
+
+## Credits
+
+Image assets provided by SkeleMann: https://twitter.com/SkeleMann/status/1509149096329854985
+
+---
+
+## NOTES
 
 ### Setup Static Adapter:
 
 https://github.com/sveltejs/kit/tree/master/packages/adapter-static
 
-### General Instruction
+### Github Pages
 
 https://svelteland.github.io/svelte-kit-blog-demo/deply-to-github/
 
-## Credits
-
-Images assets provided by SkeleMann: https://twitter.com/SkeleMann/status/1509149096329854985
+```bash
+npm run deploy
+```

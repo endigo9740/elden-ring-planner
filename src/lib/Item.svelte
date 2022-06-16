@@ -17,7 +17,7 @@
     {#if source && $equipment[slot]}
     <img src="{baseUrl}/{$equipment[slot].path}" class="w-full" title={$equipment[slot].name} alt={$equipment[slot].name}>
     {:else}
-    <p class="text-[9px] md:text-xs lg:text-base opacity-50">{label}</p>
+    <p class="md:text-xs lg:text-base opacity-50">{label}</p>
     {/if}
 </div>
 {/if}

@@ -37,8 +37,6 @@
         castListArr = castListArr.filter((item: any) => {
             return JSON.stringify(item).toLowerCase().includes(searchTerm.toLowerCase());
         });
-        // Sort alphabetically by name (NOTE: keep manual sort?)
-        // castListArr = castListArr.sort((a, b) => a.name < b.name ? -1 : 1);
         // Return
         return castListArr;
     }
@@ -51,14 +49,14 @@
     <div class="flex-auto" on:click={close}></div>
 
     <!-- Panel -->
-    <div class="bg-gold-bg w-[90%] md:w-[75%] lg:w-[45%] flex flex-col" transition:fly|self={{x: 400, duration: 200}}>
+    <div class="bg-gold-bg w-[90%] md:w-[75%] lg:w-[40%] flex flex-col" transition:fly|self={{x: 400, duration: 200}}>
         
         <!-- Header -->
         <header class="flex-none flex justify-between p-4">
             <h2 class="capitalize">{$menu.label}</h2>
             <div class="flex items-center space-x-4">
                 <button type="button" on:click={remove}>Remove</button>
-                <button type="button" on:click={close} class="px-4">&#10005;</button>
+                <button type="button" on:click={close} class="px-4">Close &#10005;</button>
             </div>
         </header>
 
@@ -66,7 +64,7 @@
 
         <!-- Search -->
         <section class="p-4">
-            <input type="search" class="border border-gold-md focus:border-gold-lt/50 bg-gold-md/50 text-white placeholder:text-white/50 px-3 py-2 w-full outline-none rounded-lg" bind:value={searchTerm} placeholder="Search...">
+            <input type="search" bind:value={searchTerm} placeholder="Search...">
         </section>
 
         <hr>
@@ -74,21 +72,26 @@
         <!-- Item Selection -->
         <section class="p-4 flex-auto space-y-4 overflow-y-auto">
             {#each Object.entries($menu.source) as [catName, catList]}
-                <!-- Subtitle -->
-                {#if catName !== '_'}<h3 class="capitalize">{formatHeading(catName)}</h3>{/if}
-                <!-- List -->
-                <nav class="list-none grid grid-cols-3 gap-4">
-                    {#each itemsFiltered(catList) as item}
-                        <li
-                            class="border border-gold-md bg-gold-md/20 p-2 rounded-xl hover:bg-gold-lt cursor-pointer"
-                            class:bg-gold-md={isActive(item)}
-                            on:click={()=>{onSelect(item)}}
-                        >
-                            <img class="w-full aspect-square" src="{baseUrl}/{item.path}" title={item.name} alt={item.name} loading="lazy">
-                            <p class="text-[10px] lg:text-xs text-white/50 text-center text-ellipsis overflow-hidden mt-2">{item.name}</p>
-                        </li>
-                    {/each}
-                </nav>
+                <!-- If Search Results -->
+                {#if itemsFiltered(catList).length}
+                    <!-- Subtitle -->
+                    {#if catName !== '_'}<h3 class="capitalize">{formatHeading(catName)}</h3>{/if}
+                    <!-- List -->
+                    <nav class="list-none grid grid-cols-3 gap-4">
+                        {#each itemsFiltered(catList) as item}
+                            <li
+                                class="border border-gold-md bg-gold-md/20 p-2 rounded-xl hover:bg-gold-lt cursor-pointer"
+                                class:bg-gold-md={isActive(item)}
+                                on:click={()=>{onSelect(item)}}
+                            >
+                                <img class="w-full aspect-square" src="{baseUrl}/{item.path}" title={item.name} alt={item.name} loading="lazy">
+                                <p class="text-[10px] lg:text-xs text-center text-ellipsis overflow-hidden mt-3">
+                                    {@html item.name ? item.name : '...'}
+                                </p>
+                            </li>
+                        {/each}
+                    </nav>
+                {/if}
             {/each}
         </section>
 
