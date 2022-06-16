@@ -2,6 +2,16 @@
 
 This tool allows you to visually plan your character's equipment, spells, and items for Elden Ring.
 
+## Contributing
+
+Found a bug, caught a typo, or want to contribute an improvement? Please create a feature branch and submit a pull request.
+
+## Credits
+
+Image assets provided by SkeleMann: https://twitter.com/SkeleMann/status/1509149096329854985
+
+---
+
 ## Developing
 
 Install dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
@@ -21,16 +31,6 @@ npm run build
 ```
 
 You can preview the production build with `npm run preview`.
-
----
-
-## Contributing
-
-Found a bug, caught a typo, or want to contribute an improvement? Please feel free to send a pull request. Thanks!
-
-## Credits
-
-Image assets provided by SkeleMann: https://twitter.com/SkeleMann/status/1509149096329854985
 
 ---
 
