@@ -107,6 +107,18 @@
     </section>
 
     <hr>
+
+    <!-- See Also -->
+    <section>
+        <nav class="list-none flex justify-center space-x-4">
+            <li class="hidden md:block"><p>Recommended</p></li>
+            <a href="https://jerp.tv/eldenring/" target="_blank">Jerp's Tools</a>
+            <a href="https://mugenmonkey.com/eldenring" target="_blank">MugenMonkey</a>
+            <a href="https://eip.gg/elden-ring/build-planner/" target="_blank">EIP Planner</a>
+        </nav>
+    </section>
+
+    <hr>
     
     <!-- Footer -->
     <footer class="text-sm flex justify-between space-x-8">
