@@ -82,6 +82,7 @@
                             <li
                                 class="border border-gold-md bg-gold-md/20 p-2 rounded-xl hover:bg-gold-lt cursor-pointer"
                                 class:bg-gold-md={isActive(item)}
+                                class:opacity-30={item.unavailable === true}
                                 on:click={()=>{onSelect(item)}}
                             >
                                 <img class="w-full aspect-square" src="{baseUrl}/{item.path}" title={item.name} alt={item.name} loading="lazy">

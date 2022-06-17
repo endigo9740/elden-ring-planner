@@ -1,11 +1,8 @@
-// CREDIT: image assets provided by SkeleMann: https://twitter.com/SkeleMann/status/1509149096329854985
+export const baseUrl: string = 'https://d1fp2fj544zz6e.cloudfront.net/size_320';
 
-export const baseUrl: string = 'https://d1fp2fj544zz6e.cloudfront.net/size-320';
-
-// Sources --- (underscore for hidden label)
+// CREDIT: image assets by SkeleMann: https://twitter.com/SkeleMann/status/1509149096329854985
+// NOTE: underscore = hide label
 export const source: any = {
-
-    // NOTE: Lyndell -> Leyndell (spelling)
 
     // Armors
     armors: {
@@ -140,7 +137,7 @@ export const source: any = {
                 {path: 'armor/helms/14870.png', name: `Imp Head (Elder)`}, 
                 {path: 'armor/helms/14880.png', name: `Silver Tear Mask`},
                 {path: 'armor/helms/14890.png', name: `Chain Coif (Male)`},
-                {path: 'armor/chests/14895.png', name: `Chain Coif (Female)`}, // MOVED
+                {path: 'armor/helms/14895.png', name: `Chain Coif (Female)`},
                 {path: 'armor/helms/14900.png', name: `Greathelm`},
                 {path: 'armor/helms/14920.png', name: `Octopus Head`},
                 {path: 'armor/helms/14930.png', name: `Jar`},
@@ -177,10 +174,10 @@ export const source: any = {
                 {path: 'armor/helms/15440.png', name: `Black Dumpling`},
                 {path: 'armor/helms/15460.png', name: `Knight Maiden Twin Crown`},
                 {path: 'armor/helms/15470.png', name: `Nox Swordstress Crown (Altered)`},
-                // {path: 'armor/helms/13900.png', name: `Ragged Hat`}, // Unavailable
-                // {path: 'armor/helms/13910.png', name: `Ragged Hat (Altred)`}, // Unavailable
-                // {path: 'armor/helms/14070.png', name: `Brave's Cord Circlet`}, // Unavailable
-                // {path: 'armor/helms/14090.png', name: `Brave's Leather Helm`}, // Unavailable
+                {path: 'armor/helms/13900.png', name: `Ragged Hat`, unavailable: true},
+                {path: 'armor/helms/13910.png', name: `Ragged Hat (Altred)`, unavailable: true},
+                {path: 'armor/helms/14070.png', name: `Brave's Cord Circlet`, unavailable: true},
+                {path: 'armor/helms/14090.png', name: `Brave's Leather Helm`, unavailable: true},
                 // ---
                 // {path: 'armor/helms/13580.png', name: ``}, // DUPE
                 // {path: 'armor/helms/13630.png', name: ``}, // DUPE
@@ -237,12 +234,12 @@ export const source: any = {
                 {path: 'armor/chests/13411.png', name: `Nox Swordstress Armor`},
                 {path: 'armor/chests/13421.png', name: `Fur Raiment`},
                 {path: 'armor/chests/13426.png', name: `Shaman Furs`},
-                {path: 'armor/helms/13431.png', name: `Gravekeeper Cloak`}, // MOVED
-                {path: 'armor/hands/13441.png', name: `Gravekeeper Cloak (M) (Altered)`}, // MOVED
-                {path: 'armor/hands/13446.png', name: `Gravekeeper Cloak (F) (Altered)`}, // MOVED
+                {path: 'armor/chests/13431.png', name: `Gravekeeper Cloak`},
+                {path: 'armor/chests/13441.png', name: `Gravekeeper Cloak (M) (Altered)`},
+                {path: 'armor/chests/13446.png', name: `Gravekeeper Cloak (F) (Altered)`},
                 {path: 'armor/chests/15411.png', name: `Rotten Gravekeeper Cloak`},
-                {path: 'armor/hands/15421.png', name: `Rotten Gravekeeper Cloak (M) (Altered)`}, // MOVED
-                {path: 'armor/hands/15426.png', name: `Rotten Gravekeeper Cloak (F) (Altered)`}, // MOVED
+                {path: 'armor/chests/15421.png', name: `Rotten Gravekeeper Cloak (M) (Altered)`},
+                {path: 'armor/chests/15426.png', name: `Rotten Gravekeeper Cloak (F) (Altered)`},
                 {path: 'armor/chests/13451.png', name: `Sanguine Noble Robe`},
                 {path: 'armor/chests/13461.png', name: `Guardian Garb (Full Bloom)`},
                 {path: 'armor/chests/13471.png', name: `Guardian Garb`},
@@ -406,12 +403,12 @@ export const source: any = {
                 {path: 'armor/chests/15451.png', name: `Lazuli Robe`},
                 {path: 'armor/chests/15461.png', name: `Night Maiden Armor`},
                 {path: 'armor/chests/15471.png', name: `Nox Swordstress Armor (Altered)`},
-                // {path: 'armor/chests/13581.png', name: ``}, // Unavailable
-                // {path: 'armor/chests/13591.png', name: ``}, // Unavailable
-                // {path: 'armor/chests/13631.png', name: ``}, // Unavailable
-                // {path: 'armor/chests/13641.png', name: ``}, // Unavailable
-                // {path: 'armor/chests/13781.png', name: ``}, // Unavailable
-                // {path: 'armor/chests/13791.png', name: ``}, // Unavailable
+                {path: 'armor/chests/13581.png', name: `(unavailable)`, unavailable: true},
+                {path: 'armor/chests/13591.png', name: `(unavailable)`, unavailable: true},
+                {path: 'armor/chests/13631.png', name: `(unavailable)`, unavailable: true},
+                {path: 'armor/chests/13641.png', name: `(unavailable)`, unavailable: true},
+                {path: 'armor/chests/13781.png', name: `(unavailable)`, unavailable: true},
+                {path: 'armor/chests/13791.png', name: `(unavailable)`, unavailable: true},
             ]
         },
         hands: {
@@ -508,12 +505,12 @@ export const source: any = {
                 {path: 'armor/hands/15362.png', name: `Omenkiller Long Gloves`},
                 {path: 'armor/hands/15372.png', name: `Malenia's Gauntlet`},
                 {path: 'armor/hands/15382.png', name: `Highwayman Gauntlets`},
-                // {path: 'armor/hands/13902.png', name: `Ragged Gloves`}, // Unavailable
-                // {path: 'armor/hands/14072.png', name: `Brave's Bracer`}, // Unavailable
-                // {path: 'armor/hands/14897.png', name: ``}, // ???
-                // {path: 'armor/hands/15022.png', name: ``}, // Variant - slightly darker
-                // {path: 'armor/hands/15042.png', name: ``}, // Variant - slightly darker
-                // {path: 'armor/hands/15062.png', name: ``}, // Variant - slightly darker
+                {path: 'armor/hands/13902.png', name: `Ragged Gloves`, unavailable: true},
+                {path: 'armor/hands/14072.png', name: `Brave's Bracer`, unavailable: true},
+                {path: 'armor/hands/14897.png', name: `(unavailable)`, unavailable: true},
+                // {path: 'armor/hands/15022.png', name: ``}, // variant soldier gauntlets - slightly darker
+                // {path: 'armor/hands/15042.png', name: ``}, // variant soldier gauntlets - slightly darker
+                // {path: 'armor/hands/15062.png', name: ``}, // variant soldier gauntlets - slightly darker
             ]
         },
         legs: {
@@ -543,7 +540,7 @@ export const source: any = {
                 {path: 'armor/legs/13373.png', name: `Royal Knight Greaves`},
                 {path: 'armor/legs/13393.png', name: `Nox Greaves`},
                 {path: 'armor/legs/13423.png', name: `Fur Leggings`},
-                {path: 'armor/legs/13428.png', name: `Fur Leggings`}, // male/female variant
+                {path: 'armor/legs/13428.png', name: `Shaman Leggings`},
                 {path: 'armor/legs/13433.png', name: `Duelist Greaves`},
                 {path: 'armor/legs/13453.png', name: `Sanguine Nobel Waistcloth`},
                 {path: 'armor/legs/13463.png', name: `Guardian Greaves`},
@@ -623,12 +620,12 @@ export const source: any = {
                 {path: 'armor/legs/15333.png', name: `Deathbed Smalls`},
                 {path: 'armor/legs/15363.png', name: `Millicent's Boots`},
                 {path: 'armor/legs/15413.png', name: `Rotten Duelist Greaves`},
-                // {path: 'armor/legs/13583.png', name: ``}, ??? knight greaves
-                // {path: 'armor/legs/13633.png', name: ``}, // ??? knight greaves
-                // {path: 'armor/legs/13903.png', name: `Ragged Loincloth`}, // Unavailable
-                // {path: 'armor/legs/14073.png', name: `Brave's Legwraps`}, // Unavailable
-                // {path: 'armor/legs/15053.png', name: ``}, // Unavailble
-                // {path: 'armor/legs/15173.png', name: ``}, // Unavailble
+                {path: 'armor/legs/13903.png', name: `Ragged Loincloth`, unavailable: true},
+                {path: 'armor/legs/14073.png', name: `Brave's Legwraps`, unavailable: true},
+                {path: 'armor/legs/13633.png', name: `(unavailable)`, unavailable: true}, // ??? soldier greaves
+                {path: 'armor/legs/13583.png', name: `(unavailable)`, unavailable: true}, // ??? knight greaves
+                {path: 'armor/legs/15053.png', name: `(unavailable)`, unavailable: true}, // ??? soldier greaves
+                {path: 'armor/legs/15173.png', name: `(unavailable)`, unavailable: true}, // ??? knight greaves
             ]
         },
     },
@@ -673,11 +670,14 @@ export const source: any = {
             {path: 'armaments/straight_swords/10063.png', name: `Warhawk's Talon`},
             {path: 'armaments/straight_swords/10064.png', name: `Lazuli Glintstone Sword`},
             {path: 'armaments/straight_swords/10065.png', name: `Rotten Crystal Sword`},
-            // {path: 'armaments/straight_swords/10050.png', name: `???`}, // Unavailable
-            // {path: 'armaments/straight_swords/10055.png', name: `???`}, // Unavailable
-            // {path: 'armaments/straight_swords/10056.png', name: `???`}, // Unavailable
+            {path: 'armaments/straight_swords/10050.png', name: `(unavailable)`, unavailable: true},
+            {path: 'armaments/straight_swords/10055.png', name: `(unavailable)`, unavailable: true},
+            {path: 'armaments/straight_swords/10056.png', name: `(unavailable)`, unavailable: true},
         ],
         greatswords: [
+            {path: 'armaments/greatswords/10049.png', name: `Inseparable Sword`},
+            {path: 'armaments/greatswords/10080.png', name: `Bastard Sword`},
+            {path: 'armaments/greatswords/10081.png', name: `Forked Greatsword`},
             {path: 'armaments/greatswords/10082.png', name: `Iron Greatsword`},
             {path: 'armaments/greatswords/10083.png', name: `Lordsworn's Greatsword`},
             {path: 'armaments/greatswords/10084.png', name: `Knight's Greatsword`},
@@ -696,9 +696,6 @@ export const source: any = {
             {path: 'armaments/greatswords/10099.png', name: `Gargoyle's Greatsword`},
             {path: 'armaments/greatswords/10100.png', name: `Death's Poker`},
             {path: 'armaments/greatswords/10101.png', name: `Gargoyle's Blackblade`},
-            {path: 'armaments/straight_swords/10080.png', name: `Bastard Sword`}, // MOVED
-            {path: 'armaments/straight_swords/10081.png', name: `Forked Greatsword`}, // MOVED
-            {path: 'armaments/straight_swords/10049.png', name: `Inseparable Sword`}, // MOVED
         ],
         colossal_swords: [
             {path: 'armaments/colossal_swords/10120.png', name: `Greatsword`},
@@ -729,6 +726,7 @@ export const source: any = {
             {path: 'armaments/heavy_thrusting_swords/10204.png', name: `Dragon King's Cragblade`},
         ],
         curved_swords: [
+            {path: 'armaments/curved_swords/10048.png', name: `Nox Flowing Sword`},
             {path: 'armaments/curved_swords/10240.png', name: `Falchion`},
             {path: 'armaments/curved_swords/10241.png', name: `Beastman's Curved Sword`},
             {path: 'armaments/curved_swords/10242.png', name: `Shotel`},
@@ -737,14 +735,13 @@ export const source: any = {
             {path: 'armaments/curved_swords/10245.png', name: `Magma Blade`},
             {path: 'armaments/curved_swords/10246.png', name: `Flowing Curved Sword`},
             {path: 'armaments/curved_swords/10247.png', name: `Wing of Astel`},
-            {path: 'armaments/curved_swords/10248.png', name: `Scavenger's Curved Sword`},
+            // {path: 'armaments/curved_swords/10248.png', name: `Scavenger's Curved Sword`}, // DUPE
+            {path: 'armaments/curved_swords/10249.png', name: `Scavenger's Curved Sword`},
             {path: 'armaments/curved_swords/10250.png', name: `Eclipse Shotel`},
             {path: 'armaments/curved_swords/10251.png', name: `Serpent-God's Curved Sword`},
             {path: 'armaments/curved_swords/10252.png', name: `Mantis Blade`},
             {path: 'armaments/curved_swords/10254.png', name: `Scimitar`},
             {path: 'armaments/curved_swords/10255.png', name: `Grossmesser`},
-            {path: 'armaments/straight_swords/10048.png', name: `Nox Flowing Sword`}, // MOVED
-            // {path: 'armaments/curved_swords/10249.png', name: `Scavenger's Curved Sword`}, // DUPE
         ],
         curved_greatswords: [
             {path: 'armaments/curved_greatswords/10280.png', name: `Onyx Lord's Greatsword`},
@@ -774,7 +771,7 @@ export const source: any = {
             {path: 'armaments/twinblades/10364.png', name: `Eleonora's Poleblade`},
             {path: 'armaments/twinblades/10367.png', name: `Gargoyle's Twinblade`},
             {path: 'armaments/twinblades/10368.png', name: `Gargoyle's Black Blades`},
-            // {path: 'armaments/twinblades/10365.png', name: `???`}, // Unavailable
+            {path: 'armaments/twinblades/10365.png', name: `(unavailable)`, unavailable: true},
         ],
         axes: [
             {path: 'armaments/axes/10520.png', name: `Battle Axe`},
@@ -810,7 +807,7 @@ export const source: any = {
             {path: 'armaments/flails/10482.png', name: `Family Heads`},
             {path: 'armaments/flails/10483.png', name: `Bastard's Stars`},
             {path: 'armaments/flails/10484.png', name: `Chainlink Flail`},
-            // {path: 'armaments/flails/10923.png', name: `???`}, // Unavailable
+            {path: 'armaments/flails/10923.png', name: `(unavailable)`, unavailable: true},
         ],
         hammers: [
             {path: 'armaments/hammers/10400.png', name: `Mace`},
@@ -911,7 +908,7 @@ export const source: any = {
             {path: 'armaments/reapers/10721.png', name: `Grave Scythe`},
             {path: 'armaments/reapers/10722.png', name: `Halo Scythe`},
             {path: 'armaments/reapers/10726.png', name: `Winged Scythe`},
-            // {path: 'armaments/reapers/10725.png', name: `???`}, // Unavailable
+            {path: 'armaments/reapers/10725.png', name: `(unavailable)`, unavailable: true},
         ],
         whips: [
             {path: 'armaments/whips/10760.png', name: `Whip`},
@@ -1021,9 +1018,10 @@ export const source: any = {
             {path: 'armaments/small_shields/12015.png', name: `Smoldering Shield`},
             {path: 'armaments/small_shields/12019.png', name: `Spiralhorn Shield`},
             {path: 'armaments/small_shields/12020.png', name: `Coil Shield`},
-            {path: 'armaments/medium_shields/12053.png', name: `Shield of the Guilty`}, // MOVED
+            {path: 'armaments/small_shields/12053.png', name: `Shield of the Guilty`},
         ],
         medium_shields: [
+            {path: 'armaments/medium_shields/12006.png', name: `Beastman's Jar-Shield`},
             {path: 'armaments/medium_shields/12040.png', name: `Kite Shield`},
             {path: 'armaments/medium_shields/12041.png', name: `Marred Leather Shield`},
             {path: 'armaments/medium_shields/12042.png', name: `Marred Wooden Shield`},
@@ -1050,7 +1048,6 @@ export const source: any = {
             {path: 'armaments/medium_shields/12068.png', name: `Inverted Hawk Heater Shield`},
             {path: 'armaments/medium_shields/12069.png', name: `Heater Shield`},
             {path: 'armaments/medium_shields/12070.png', name: `Black Leather Shield`},
-            {path: 'armaments/small_shields/12006.png', name: `Beastman's Jar-Shield`}, // MOVED
         ],
         greatshields: [
             {path: 'armaments/greatshields/12080.png', name: `Dragon Towershield`},
