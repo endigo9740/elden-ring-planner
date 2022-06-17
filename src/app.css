@@ -19,7 +19,8 @@ body {
     background-attachment: fixed;
 }
 hr { @apply bg-gold-md/50 border-none h-[2px]; }
-button { @apply !bg-gold-lt py-2 px-3 rounded hover:brightness-90; }
+button { @apply !bg-gold-lt py-2 px-3 rounded hover:brightness-90 whitespace-nowrap; }
+button:disabled { @apply !bg-black/20 text-gold-md; }
 
 /* Typography */
 
@@ -37,8 +38,13 @@ a:hover { @apply text-white; }
 
 /* Forms */
 
+label { @apply block w-full; }
+label span { @apply block text-white/60 text-xs mb-2; }
+select {
+    @apply border border-gold-md focus:border-gold-lt/50 bg-gold-md/50 text-white/60 placeholder:text-white/20 px-3 py-[10px] w-full outline-none rounded-lg capitalize;
+}
 input[type="search"] {
-    @apply border border-gold-md focus:border-gold-lt/50 bg-gold-md/50 text-white placeholder:text-white/50 px-3 py-2 w-full outline-none rounded-lg;
+    @apply border border-gold-md focus:border-gold-lt/50 bg-gold-md/50 text-white/60 placeholder:text-white/20 px-3 py-2 w-full outline-none rounded-lg;
 }
 
 /* Scrollbars */

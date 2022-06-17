@@ -70,7 +70,7 @@ export const clearAllItems = (): void => {
     localStorage.clear();
 };
 
-// Persist stores to LocalStroage
+// Persist stores to LocalStorage
 if (browser) {
 
     // LocalStorage: Menu

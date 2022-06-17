@@ -12,8 +12,8 @@
 
 <div id="equipment" class="w-full max-w-[1024px] mx-auto py-8 px-4 space-y-8">
     
-    <header class="flex justify-between">
-        <h3>Fashion Planner</h3>
+    <header class="flex justify-between items-center">
+        <h2>Fashion Planner</h2>
         <button type="button" on:click={clear}>Clear</button>
     </header>
 
@@ -109,9 +109,13 @@
     <hr>
     
     <!-- Footer -->
-    <footer class="flex justify-between space-x-8">
-        <a href="https://github.com/endigo9740/elden-ring-planner" target="_blank">Contribute on Github</a>
-        <a href="https://endigodesign.com/" target="_blank">By Endigo</a>
+    <footer class="text-sm flex justify-between space-x-8">
+        <div class="flex space-x-2">
+            <a href="https://github.com/endigo9740/elden-ring-planner" target="_blank">Contribute</a>
+            <span class="opacity-10">|</span>
+            <a href="https://twitter.com/SkeleMann/status/1509149096329854985" target="_blank">Media</a>
+        </div>
+        <a href="https://endigodesign.com/" target="_blank">By <strong>Endigo Design</strong></a>
     </footer>
 
 </div>
