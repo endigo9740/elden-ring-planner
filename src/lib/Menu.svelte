@@ -4,13 +4,12 @@
     import { menu, equipment } from "./store";
     import { baseUrl } from './source';
 
+    // Filters ---
+    
     let categoryTerm: string = '';
     let searchTerm: string = '';
 
-    function filterByCategory(e: any): void {
-        const v = e.target.value;
-        categoryTerm = v;
-    }
+    // Functionality ---
 
     function clearFilters(): void {
         categoryTerm = '';
@@ -22,8 +21,9 @@
     }
 
     function isActive(item: any): boolean {
-        if (!$equipment[$menu.slot]) return false;
-        return item.path === $equipment[$menu.slot].path;
+        const slot = $equipment[$menu.slot];
+        if (!slot) return false;
+        return item.path === slot.path;
     }
 
     function onSelect(v: any): void {
@@ -40,18 +40,20 @@
     function close(): void {
         menu.set(undefined);
     }
-
     
-    // Reactive
+    // Reactive ---
+    
+    // Clear category term on menu change
     menu.subscribe(v => {
         categoryTerm = ''; // clear
     });
+
+    // Filtered items based on current conditions
     $: itemsFiltered = (catList: any): any[] => {
         let castListArr: any[] = Array.from(catList);
         // Filter by Category Term
         castListArr = castListArr.filter((item: any) => {
             if (!categoryTerm) return item;
-            console.log(item.path, `/${categoryTerm}/`)
             return item.path.includes(`/${categoryTerm}/`);
         });
         // Filter by Search Term
@@ -83,6 +85,7 @@
 
         <!-- Filters -->
         <section class="shadow-xl p-4 pt-0 flex items-end space-x-4">
+
             <!-- Category -->
             {#if Object.entries($menu.source).length > 1}
             <label>
@@ -90,32 +93,33 @@
                 <select class="flex-[40%] list-none grid grid-cols-3 gap-4" bind:value={categoryTerm}>
                     <option value="">- None -</option>
                     {#each Object.entries($menu.source) as [catName, catList]}
-                        {#if catName !== '_'}
-                        <option value={catName} class="border border-gold-md bg-gold-md/20 p-2 rounded-xl hover:bg-gold-lt cursor-pointer">
-                            {formatHeading(catName)}
-                        </option>
-                        {/if}
+                    <option value={catName} class="border border-gold-md bg-gold-md/20 p-2 rounded-xl hover:bg-gold-lt cursor-pointer">
+                        {formatHeading(catName)}
+                    </option>
                     {/each}
                 </select>
             </label>
             {/if}
+
             <!-- Search -->
             <label>
                 <span>Search</span>
                 <input class="flex-[60%]" type="search" bind:value={searchTerm} placeholder="Search...">
             </label>
+
+            <!-- Clear -->
             <button type="button" on:click={clearFilters} disabled={!searchTerm && !categoryTerm}>Clear</button>
+
         </section>
 
         <!-- Item Selection -->
         <section class="p-4 flex-auto space-y-4 overflow-y-auto">
-            <!-- Items -->
+            <!-- Per Each Category -->
             {#each Object.entries($menu.source) as [catName, catList]}
-                <!-- If Search Results -->
                 {#if itemsFiltered(catList).length}
-                    <!-- Subtitle -->
+                    <!-- Category Name -->
                     {#if catName !== '_'}<h3 class="capitalize">{formatHeading(catName)}</h3>{/if}
-                    <!-- List -->
+                    <!-- Category List -->
                     <nav class="list-none grid grid-cols-3 gap-4">
                         {#each itemsFiltered(catList) as item}
                             <li

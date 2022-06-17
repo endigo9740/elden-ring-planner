@@ -6,15 +6,15 @@
     export let slot: string = ''
     export let label: string = 'Item';
 
-    function onOpen(): void { menu.set({source, slot, label}); }
+    function open(): void { menu.set({source, slot, label}); }
 </script>
 
 {#if equipment}
 <div
     class="cell cell-hover aspect-square flex justify-center items-center"
-    on:click={onOpen}
+    on:click={open}
 >
-    {#if source && $equipment[slot]}
+    {#if $equipment[slot]}
     <img src="{baseUrl}/{$equipment[slot].path}" class="w-full" title={$equipment[slot].name} alt={$equipment[slot].name}>
     {:else}
     <p class="md:text-xs lg:text-base opacity-50">{label}</p>
