@@ -4,14 +4,14 @@
     import { clearAllItems } from "$lib/store";
 
     function clear(): void {
-        if (confirm('Are you sure you want to clear all items?')) {
-            clearAllItems();
-        }
+        if (confirm('Are you sure you want to clear all items? This can NOT be undone.')) { clearAllItems(); }
     }
 </script>
 
 <div id="equipment" class="w-full max-w-[1024px] mx-auto py-8 px-4 space-y-8">
     
+
+    <!-- Header -->
     <header class="flex justify-between items-center">
         <h2>Fashion Planner</h2>
         <button type="button" on:click={clear}>Clear</button>
@@ -44,7 +44,7 @@
                 <!-- Armor: Chest -->
                 <Item source={source.armors.chests} slot="chest" label="Chest"></Item>
                 <!-- Armor: Hands -->
-                <Item source={source.armors.hands} slot="hands" label="Hands" class="flip-horz"></Item>
+                <Item source={source.armors.hands} slot="hands" label="Hands"></Item>
                 <!-- Armor: Legs -->
                 <Item source={source.armors.legs} slot="legs" label="Legs"></Item>
                 <!-- Ammo -->
@@ -69,7 +69,7 @@
     <hr>
     
     <!-- Spells -->
-    <section class="grid grid-cols-2 md:grid-cols-5 gap-4">
+    <section class="grid grid-cols-3 md:grid-cols-5 gap-4">
         <Item source={source.spells} slot="spell_01" label="Spell 1"></Item>
         <Item source={source.spells} slot="spell_02" label="Spell 2"></Item>
         <Item source={source.spells} slot="spell_03" label="Spell 3"></Item>
@@ -86,7 +86,7 @@
 
     <!-- Quickslots -->
     <section class="md:flex items-center space-y-8 md:space-y-0 md:space-x-8">
-        <div class="md:w-[72%] grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div class="md:w-[72%] grid grid-cols-3 md:grid-cols-5 gap-4">
             <Item source={source.consumables} slot="hotbar_01" label="Item 1"></Item>
             <Item source={source.consumables} slot="hotbar_02" label="Item 2"></Item>
             <Item source={source.consumables} slot="hotbar_03" label="Item 3"></Item>
@@ -98,7 +98,7 @@
             <Item source={source.consumables} slot="hotbar_09" label="Item 9"></Item>
             <Item source={source.consumables} slot="hotbar_10" label="Item 10"></Item>
         </div>
-        <div class="md:w-[28%] grid grid-cols-2 gap-4">
+        <div class="md:w-[28%] grid grid-cols-4 md:grid-cols-2 gap-4">
             <Item source={source.consumables} slot="quickbar_t" label="Top"></Item>
             <Item source={source.consumables} slot="quickbar_r" label="Right"></Item>
             <Item source={source.consumables} slot="quickbar_l" label="left"></Item>

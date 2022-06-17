@@ -70,7 +70,7 @@
     <div class="flex-auto" on:click={close}></div>
 
     <!-- Panel -->
-    <div class="bg-gold-bg w-[90%] md:w-[75%] lg:w-[40%] flex flex-col" transition:fly|self={{x: 400, duration: 200}}>
+    <div class="gradient-background w-[90%] md:w-[75%] lg:w-[40%] flex flex-col" transition:fly|self={{x: 400, duration: 200}}>
         
         <!-- Header -->
         <header class="flex-none flex justify-between p-4">
@@ -81,10 +81,8 @@
             </div>
         </header>
 
-        <hr>
-
         <!-- Filters -->
-        <section class="p-4 flex items-end space-x-4">
+        <section class="shadow-xl p-4 pt-0 flex items-end space-x-4">
             <!-- Category -->
             {#if Object.entries($menu.source).length > 1}
             <label>
@@ -109,8 +107,6 @@
             <button type="button" on:click={clearFilters} disabled={!searchTerm && !categoryTerm}>Clear</button>
         </section>
 
-        <hr>
-
         <!-- Item Selection -->
         <section class="p-4 flex-auto space-y-4 overflow-y-auto">
             <!-- Items -->
@@ -123,8 +119,8 @@
                     <nav class="list-none grid grid-cols-3 gap-4">
                         {#each itemsFiltered(catList) as item}
                             <li
-                                class="border border-gold-md bg-gold-md/20 p-2 rounded-xl hover:bg-gold-lt cursor-pointer"
-                                class:bg-gold-md={isActive(item)}
+                                class="cell cell-hover"
+                                class:active={isActive(item)}
                                 class:opacity-30={item.unavailable === true}
                                 on:click={()=>{onSelect(item)}}
                             >
@@ -142,3 +138,7 @@
     </div>
 </div>
 {/if}
+
+<style lang="postcss">
+    .active { @apply !bg-gold-lt; }
+</style>

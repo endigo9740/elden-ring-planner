@@ -11,7 +11,7 @@
 
 {#if equipment}
 <div
-    class="flex justify-center items-center border border-gold-md bg-gold-md/20 aspect-square w-full rounded-xl p1 md:p-4 hover:bg-gold-lt cursor-pointer {$$props.class}"
+    class="cell cell-hover aspect-square flex justify-center items-center"
     on:click={onOpen}
 >
     {#if source && $equipment[slot]}

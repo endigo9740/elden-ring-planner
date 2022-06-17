@@ -13,11 +13,7 @@
 
 /* Global */
 
-body {
-    @apply bg-green-500 text-white;
-    background: linear-gradient(0deg, rgba(32,32,24,1) 0%, rgba(13,11,8,1) 100%);
-    background-attachment: fixed;
-}
+body { @apply text-white;}
 hr { @apply bg-gold-md/50 border-none h-[2px]; }
 button { @apply !bg-gold-lt py-2 px-3 rounded hover:brightness-90 whitespace-nowrap; }
 button:disabled { @apply !bg-black/20 text-gold-md; }
@@ -47,8 +43,18 @@ input[type="search"] {
     @apply border border-gold-md focus:border-gold-lt/50 bg-gold-md/50 text-white/60 placeholder:text-white/20 px-3 py-2 w-full outline-none rounded-lg;
 }
 
+/* Classes */
+
+.cell { @apply border border-gold-md bg-gold-md/20 w-full rounded-xl p-1 md:p-4 hover:bg-gold-lt cursor-pointer; }
+.cell-hover { @apply hover:bg-gold-lt cursor-pointer; }
+.gradient-background {
+    @apply bg-gold-bg;
+    background: linear-gradient(0deg, rgba(32,32,24,1) 0%, rgba(13,11,8,1) 100%);
+    background-attachment: fixed;
+}
+
 /* Scrollbars */
 
-::-webkit-scrollbar { @apply bg-gold-bg w-[5px];}
+::-webkit-scrollbar { @apply bg-gold-bg w-3;}
 ::-webkit-scrollbar-track { @apply shadow; }
 ::-webkit-scrollbar-thumb { @apply bg-gold-lt; }
