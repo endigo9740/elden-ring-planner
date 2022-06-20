@@ -1,7 +1,7 @@
 <script lang="ts">
     import Item from "$lib/Item.svelte";
     import { source } from "$lib/source";
-    import { clearAllItems } from "$lib/store";
+    import { clearAllItems, equipment } from "$lib/store";
 
     function clear(): void {
         if (confirm('Are you sure you want to clear all items? This can NOT be undone.')) { clearAllItems(); }

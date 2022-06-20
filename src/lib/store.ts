@@ -75,7 +75,6 @@ if (browser) {
 
     // LocalStorage: Menu
     let lsMenu: any = localStorage.getItem('menu');
-    console.log(lsMenu, typeof lsMenu);
     if (lsMenu !== null && lsMenu !== 'undefined') { menu.set(JSON.parse(lsMenu)); }
     menu.subscribe(v => localStorage.setItem('menu', JSON.stringify(v)));
 

@@ -30,15 +30,28 @@
         const equipmentArrCopy = $equipment;
         equipmentArrCopy[$menu.slot] = v;
         equipment.set(equipmentArrCopy);
-        close();
+        onClose();
     }
 
-    function unequip(): void {
+    function onUnequip(): void {
         onSelect(null);
     }
 
-    function close(): void {
+    function onRandomize(): void {
+        const randCat = randomFromArray(Object.entries($menu.source));
+        const randItem = randomFromArray(randCat[1]);
+        onSelect(randItem);
+    }
+
+    function onClose(): void {
         menu.set(undefined);
+    }
+
+    // Utility ---
+
+    function randomFromArray(arr: any[]): any {
+        const r = arr.sort(() => 0.5 - Math.random());
+        return r.slice(0,1)[0];
     }
     
     // Reactive ---
@@ -69,7 +82,7 @@
 <div class="fixed z-50 w-full h-full flex bg-gold-md/50" transition:fade|self={{duration: 100}}>
 
     <!-- Shim -->
-    <div class="flex-auto" on:click={close}></div>
+    <div class="flex-auto" on:click={onClose}></div>
 
     <!-- Panel -->
     <div class="gradient-background w-[90%] md:w-[75%] lg:w-[40%] flex flex-col" transition:fly|self={{x: 400, duration: 200}}>
@@ -78,8 +91,9 @@
         <header class="flex-none flex justify-between p-4">
             <h2 class="capitalize">{$menu.label}</h2>
             <div class="flex items-center space-x-4">
-                <button type="button" on:click={unequip}>Unequip</button>
-                <button type="button" on:click={close} class="px-4">Close &#10005;</button>
+                <button type="button" on:click={onUnequip}>Unequip</button>
+                <button type="button" on:click={onRandomize}>Random</button>
+                <button type="button" on:click={onClose} class="px-4">Close &#10005;</button>
             </div>
         </header>
 

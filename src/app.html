@@ -8,5 +8,14 @@
 	</head>
 	<body class="gradient-background">
 		<div>%sveltekit.body%</div>
+
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-X2NVEXL8YL"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-X2NVEXL8YL');
+		</script>
 	</body>
 </html>
