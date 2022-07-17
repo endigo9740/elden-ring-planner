@@ -1,4 +1,4 @@
-export const baseUrl: string = 'https://d1fp2fj544zz6e.cloudfront.net/size_320';
+export const baseUrl: string = 'https://d1fp2fj544zz6e.cloudfront.net/elden_ring/size_320';
 
 // NOTE: underscore = hide label
 export const source: any = {
