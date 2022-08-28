@@ -4,6 +4,7 @@
   import { menu } from "$lib/store";
   import Menu from "$lib/Menu.svelte";
 
+  import "../theme.postcss";
   import "../app.postcss";
 
   // Toggle body scroll while selection present
@@ -22,4 +23,6 @@
 </svelte:head>
 
 <Menu />
-<slot />
+<main>
+  <slot />
+</main>

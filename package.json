@@ -11,9 +11,11 @@
     "deploy": "npm run build && touch ./build/.nojekyll && npx gh-pages -d ./build -t true"
   },
   "devDependencies": {
+    "@brainandbones/skeleton": "^0.32.19",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "^1.0.0-next.39",
     "@sveltejs/kit": "next",
+    "@tailwindcss/forms": "^0.5.2",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
     "postcss-load-config": "^4.0.1",

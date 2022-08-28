@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { Button, Card } from '@brainandbones/skeleton';
     import { fade, fly } from 'svelte/transition';
 
     import { menu, equipment } from "./store";
@@ -79,52 +80,60 @@
 </script>
 
 {#if $menu}
-<div class="fixed z-50 w-full h-full flex bg-gold-md/50" transition:fade|self={{duration: 100}}>
+<div class="fixed z-50 w-full h-full flex bg-black/10 dar:bg-black/50" transition:fade|self={{duration: 100}}>
 
     <!-- Shim -->
     <div class="flex-auto" on:click={onClose}></div>
 
     <!-- Panel -->
-    <div class="gradient-background w-[90%] md:w-[75%] lg:w-[40%] flex flex-col" transition:fly|self={{x: 400, duration: 200}}>
+    <div class="bg-surface-50 dark:bg-surface-900 w-[90%] md:w-[75%] lg:w-[40%] flex flex-col" transition:fly|self={{x: 400, duration: 200}}>
         
         <!-- Header -->
-        <header class="flex-none flex justify-between p-4">
-            <h2 class="capitalize">{$menu.label}</h2>
-            <div class="flex items-center space-x-4">
-                <button type="button" on:click={onUnequip}>Unequip</button>
-                <button type="button" on:click={onRandomize}>Random</button>
-                <button type="button" on:click={onClose} class="px-4">Close &#10005;</button>
+        <header class="p-4 space-y-4">
+            
+            <div class="flex justify-between items-center">
+                <h2>{$menu.label}</h2>
+                <Button variant="filled-primary" type="button" on:click={onClose}>&#10005;</Button>
             </div>
+            
+            <!-- Filters -->
+            <section class="flex flex-col md:flex-row md:space-x-4 md:space-y-0">
+
+                <!-- Category -->
+                {#if Object.entries($menu.source).length > 1}
+                <label class="flex-1">
+                    <!-- <span>Category</span> -->
+                    <select class="flex-[40%] list-none grid grid-cols-3 gap-4" bind:value={categoryTerm}>
+                        <option value="">- None -</option>
+                        {#each Object.entries($menu.source) as [catName, catList]}
+                        <option value={catName} class="border border-accent-500 bg-accent-500/20 p-2 rounded-xl hover:bg-primary-500 cursor-pointer">
+                            {formatHeading(catName)}
+                        </option>
+                        {/each}
+                    </select>
+                </label>
+                {/if}
+
+                <!-- Search -->
+                <label class="flex-1">
+                    <!-- <span>Search</span> -->
+                    <input class="flex-[60%]" type="search" bind:value={searchTerm} placeholder="Search...">
+                </label>
+
+                <!-- Clear -->
+                {#if searchTerm || categoryTerm}
+                <Button variant="ghost-accent" type="button" class="flex-none" on:click={clearFilters} disabled={!searchTerm && !categoryTerm}>&#10005;</Button>
+                {/if}
+
+            </section>
+
+            <!-- Options -->
+            <Card class="flex justify-center items-center space-x-4 space-y-0">
+                <Button variant="ghost-accent" width="w-full" type="button" on:click={onUnequip}>Unequip</Button>
+                <Button variant="ghost-accent" width="w-full" type="button" on:click={onRandomize}>Randomize</Button>
+            </Card>
+
         </header>
-
-        <!-- Filters -->
-        <section class="shadow-xl p-4 pt-0 flex items-end space-x-4">
-
-            <!-- Category -->
-            {#if Object.entries($menu.source).length > 1}
-            <label>
-                <span>Category</span>
-                <select class="flex-[40%] list-none grid grid-cols-3 gap-4" bind:value={categoryTerm}>
-                    <option value="">- None -</option>
-                    {#each Object.entries($menu.source) as [catName, catList]}
-                    <option value={catName} class="border border-gold-md bg-gold-md/20 p-2 rounded-xl hover:bg-gold-lt cursor-pointer">
-                        {formatHeading(catName)}
-                    </option>
-                    {/each}
-                </select>
-            </label>
-            {/if}
-
-            <!-- Search -->
-            <label>
-                <span>Search</span>
-                <input class="flex-[60%]" type="search" bind:value={searchTerm} placeholder="Search...">
-            </label>
-
-            <!-- Clear -->
-            <button type="button" on:click={clearFilters} disabled={!searchTerm && !categoryTerm}>Clear</button>
-
-        </section>
 
         <!-- Item Selection -->
         <section class="p-4 flex-auto space-y-4 overflow-y-auto">
@@ -137,7 +146,7 @@
                     <nav class="list-none grid grid-cols-3 gap-4">
                         {#each itemsFiltered(catList) as item}
                             <li
-                                class="cell cell-hover"
+                                class="cell"
                                 class:active={isActive(item)}
                                 class:opacity-30={item.unavailable === true}
                                 on:click={()=>{onSelect(item)}}
@@ -158,5 +167,5 @@
 {/if}
 
 <style lang="postcss">
-    .active { @apply !bg-gold-lt; }
+    .active { @apply !bg-primary-500; }
 </style>

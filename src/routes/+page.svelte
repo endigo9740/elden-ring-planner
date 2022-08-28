@@ -1,23 +1,27 @@
 <script lang="ts">
+    import { LightSwitch, Button, Divider, Card } from '@brainandbones/skeleton';
+
     import Item from "$lib/Item.svelte";
     import { source } from "$lib/source";
-    import { clearAllItems, equipment } from "$lib/store";
+    import { clearAllItems } from "$lib/store";
 
     function clear(): void {
         if (confirm('Are you sure you want to clear all items? This can NOT be undone.')) { clearAllItems(); }
     }
 </script>
 
-<div id="equipment" class="w-full max-w-[1024px] mx-auto py-8 px-4 space-y-8">
-    
+<div id="equipment" class="w-full max-w-[1024px] mx-auto p-4 space-y-8">
 
     <!-- Header -->
-    <header class="flex justify-between items-center">
-        <h2>Fashion Planner</h2>
-        <button type="button" on:click={clear}>Clear</button>
+    <header>
+        <Card class="flex justify-between items-center space-y-0">
+            <h4>Fashion Planner</h4>
+            <div class="flex items-center space-x-4">
+                <LightSwitch />
+                <Button variant="ghost-accent" type="button" on:click={clear}>Clear</Button>
+            </div>
+        </Card>
     </header>
-
-    <hr>
 
     <!-- Gear -->
     <section class="block md:flex items-center space-y-8 md:space-y-0 md:space-x-4">
@@ -66,7 +70,7 @@
 
     </section>
 
-    <hr>
+    <Divider />
     
     <!-- Spells -->
     <section class="grid grid-cols-3 md:grid-cols-5 gap-4">
@@ -82,7 +86,7 @@
         <Item source={source.spells} slot="spell_10" label="Spell 10"></Item>
     </section>
 
-    <hr>
+    <Divider />
 
     <!-- Quickslots -->
     <section class="md:flex items-center space-y-8 md:space-y-0 md:space-x-8">
@@ -106,20 +110,16 @@
         </div>
     </section>
 
-    <hr>
-
     <!-- See Also -->
-    <section>
+    <Card>
         <nav class="list-none flex justify-center space-x-4">
             <li class="hidden md:block"><p>Recommended</p></li>
             <a href="https://jerp.tv/eldenring/" target="_blank">Jerp's Tools</a>
             <a href="https://mugenmonkey.com/eldenring" target="_blank">MugenMonkey</a>
             <a href="https://eip.gg/elden-ring/build-planner/" target="_blank">EIP Planner</a>
         </nav>
-    </section>
+    </Card>
 
-    <hr>
-    
     <!-- Footer -->
     <footer class="text-sm flex justify-between space-x-8">
         <div class="flex space-x-2">

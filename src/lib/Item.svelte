@@ -10,14 +10,11 @@
 </script>
 
 {#if equipment}
-<div
-    class="cell cell-hover aspect-square flex justify-center items-center"
-    on:click={open}
->
+<div class="cell" on:click={open} >
     {#if $equipment[slot]}
     <img src="{baseUrl}/{$equipment[slot].path}" class="w-full" title={$equipment[slot].name} alt={$equipment[slot].name}>
     {:else}
-    <p class="md:text-xs lg:text-base opacity-50">{label}</p>
+    <p class="font-bold">{label}</p>
     {/if}
 </div>
 {/if}

@@ -2,22 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --color-gold-lt: 121 115 85; /* #797355 */
-    --color-gold-md: 49 44 33; /* #312c21 */
-    --color-gold-dk: 32 32 24; /* #202018 */
-    --color-gold-bg: 21 20 15; /* #0d0b08 */
-}
-
 /* Global */
 
-body { @apply text-white;}
-hr { @apply bg-gold-md/50 border-none h-[2px]; }
-button { @apply !bg-gold-lt py-2 px-3 rounded hover:brightness-90 whitespace-nowrap; }
-button:disabled { @apply !bg-black/20 text-gold-md; }
+/* body { @apply text-white;} */
+body { @apply bg-surface-100 dark:bg-surface-900 text-black dark:text-white; }
+.dark body {
+	background-image: linear-gradient(0deg, rgba(32,32,24,0.33) 0%, rgba(13,11,8,0.33) 100%);
+    background-attachment: fixed;
+}
 
-/* Typography */
+/* --- Scrollbars --- */
 
+/* Scrollbars (webkit) */
+::-webkit-scrollbar {
+	@apply w-2;
+}
+::-webkit-scrollbar-track {
+	@apply bg-white/20 dark:bg-black/20;
+}
+::-webkit-scrollbar-thumb {
+	@apply rounded-full bg-surface-300 dark:bg-surface-700;
+}
+
+/* Hide Scrollbars */
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+.hide-scrollbar {
+	-ms-overflow-style: none; /* IE/Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+/* --- Typography --- */
+
+/* Headings */
 h1 { @apply text-4xl md:text-6xl font-bold; }
 h2 { @apply text-3xl md:text-4xl font-bold; }
 h3 { @apply text-2xl md:text-3xl font-bold; }
@@ -25,34 +43,95 @@ h4 { @apply text-xl md:text-2xl font-bold; }
 h5 { @apply text-lg md:text-xl font-bold; }
 h6 { @apply text-base md:text-lg font-bold; }
 
-p { @apply text-white/60; }
+/* Blockquote */
+blockquote {
+	@apply border-l-2 border-l-accent-500 pl-2 text-base text-surface-500 dark:text-surface-400;
+}
 
-a { @apply text-gold-lt; }
-a:hover { @apply text-white; }
+/* Code */
+pre:not(.codeblock pre) {
+	@apply bg-surface-700 dark:bg-black/20 text-surface-50 p-4 whitespace-pre-wrap text-base overflow-x-auto rounded;
+}
+code:not(.codeblock code) {
+	@apply bg-surface-500/30 text-black dark:text-white text-xs py-1 px-2 rounded;
+}
 
-/* Forms */
+/* Page Styles */
+main p {
+	@apply text-base text-black/80 dark:text-white/80;
+}
+main a:not(.comp-button):not(.crumb a):not(.list-row):not(.logo):not(.drawer a) {
+	@apply text-primary-500 underline underline-offset-4 decoration-primary-500/20 decoration-dotted hover:brightness-110;
+}
 
-label { @apply block w-full; }
-label span { @apply block text-white/60 text-xs mb-2; }
+/* --- Forms --- */
+
+fieldset {
+	@apply block;
+}
+
+/* Inputs */
+[type='text'],
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='week'],
+[multiple],
+textarea,
 select {
-    @apply border border-gold-md focus:border-gold-lt/50 bg-gold-md/50 text-white/60 placeholder:text-white/20 px-3 py-[10px] w-full outline-none rounded-lg capitalize;
-}
-input[type="search"] {
-    @apply border border-gold-md focus:border-gold-lt/50 bg-gold-md/50 text-white/60 placeholder:text-white/20 px-3 py-2 w-full outline-none rounded-lg;
+	@apply w-full text-black bg-surface-50 border-surface-300 rounded-lg shadow-sm focus:border-accent-500 focus:ring-accent-500 hover:brightness-110;
+	@apply dark:text-white dark:bg-surface-600 dark:border-surface-500;
 }
 
-/* Classes */
-
-.cell { @apply border border-gold-md bg-gold-md/20 w-full rounded-xl p-1 md:p-4 hover:bg-gold-lt cursor-pointer; }
-.cell-hover { @apply hover:bg-gold-lt cursor-pointer; }
-.gradient-background {
-    @apply bg-gold-bg;
-    background: linear-gradient(0deg, rgba(32,32,24,1) 0%, rgba(13,11,8,1) 100%);
-    background-attachment: fixed;
+/* Selectable */
+[type='checkbox'],
+[type='radio'] {
+	@apply border-surface-500 rounded text-accent-600 focus:ring-accent-500;
 }
 
-/* Scrollbars */
+/* Invalid - https://www.bram.us/2021/01/28/form-validation-you-want-notfocusinvalid-not-invalid/ */
+input:not(:focus):not(:placeholder-shown):invalid {
+	@apply bg-warning-300 border-warning-500;
+}
 
-::-webkit-scrollbar { @apply bg-gold-bg w-3;}
-::-webkit-scrollbar-track { @apply shadow; }
-::-webkit-scrollbar-thumb { @apply bg-gold-lt; }
+/* Placeholders */
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+	@apply text-surface-400;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+	@apply text-surface-400;
+}
+input::placeholder,
+textarea::placeholder {
+	@apply text-surface-400;
+}
+
+/* Labels */
+label {
+	@apply block overflow-visible;
+}
+label span,
+legend {
+	@apply block text-surface-700 dark:text-surface-300 text-sm mb-2;
+}
+
+/* Accent Color - https://developer.mozilla.org/en-US/docs/Web/CSS/accent-color */
+[type='range']:not(.range-input) {
+	@apply w-full accent-accent-500;
+}
+
+
+/* --- Classes --- */
+
+.cell {
+	@apply bg-accent-500/10 hover:bg-accent-500/20 ring-[1px] ring-accent-500/30 aspect-square p-4 flex justify-center items-center rounded-xl cursor-pointer;
+}
