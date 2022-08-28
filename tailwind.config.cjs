@@ -1,7 +1,7 @@
-/** @type {import('tailwindcss').Config} */
 const config = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
-	theme: {
+  content: ["./src/**/*.{html,js,svelte,ts}"],
+
+  theme: {
 		extend: {
 			colors: {
 				gold: {
@@ -13,6 +13,8 @@ const config = {
 			}
 		},
 	},
-	plugins: []
+
+  plugins: [],
 };
+
 module.exports = config;

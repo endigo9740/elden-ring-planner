@@ -1,4 +1,4 @@
-import { browser } from "$app/env";
+import { browser } from "$app/environment";
 import { writable, type Writable } from 'svelte/store';
 
 // Writable: Menu - contains: {category, slot, label}

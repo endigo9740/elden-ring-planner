@@ -1,39 +1,29 @@
 {
-	"name": "elden-ring-planner",
-	"version": "1.0.0",
-	"scripts": {
-		"dev": "svelte-kit dev",
-		"package": "svelte-kit package",
-		"preview": "svelte-kit preview",
-		"prepare": "svelte-kit sync",
-		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
-		"format": "prettier --write --plugin-search-dir=. .",
-		"build": "svelte-kit build && touch ./build/.nojekyll",
-		"deploy": "npm run build && npx gh-pages -d ./build -t true"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-static": "^1.0.0-next.34",
-		"@sveltejs/kit": "next",
-		"@typescript-eslint/eslint-plugin": "^5.10.1",
-		"@typescript-eslint/parser": "^5.10.1",
-		"autoprefixer": "^10.4.4",
-		"eslint": "^8.12.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"gh-pages": "^4.0.0",
-		"postcss": "^8.4.12",
-		"postcss-load-config": "^3.1.4",
-		"prettier": "^2.5.1",
-		"prettier-plugin-svelte": "^2.5.0",
-		"svelte": "^3.44.0",
-		"svelte-check": "^2.2.6",
-		"svelte-preprocess": "^4.10.5",
-		"tailwindcss": "^3.1.3",
-		"tslib": "^2.3.1",
-		"typescript": "~4.6.2"
-	},
-	"type": "module"
+  "name": "my-app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "deploy": "npm run build && touch ./build/.nojekyll && npx gh-pages -d ./build -t true"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-static": "^1.0.0-next.39",
+    "@sveltejs/kit": "next",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-load-config": "^4.0.1",
+    "svelte": "^3.44.0",
+    "svelte-check": "^2.7.1",
+    "svelte-preprocess": "^4.10.7",
+    "tailwindcss": "^3.1.5",
+    "tslib": "^2.3.1",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.4"
+  },
+  "type": "module"
 }
