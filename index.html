@@ -3,34 +3,27 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="/elden-ring-planner/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="/elden-ring-planner/internal/immutable/start-f74fe72b.js">
-	<link rel="modulepreload" href="/elden-ring-planner/internal/immutable/chunks/index-46b8d983.js">
-	<link rel="modulepreload" href="/elden-ring-planner/internal/immutable/chunks/index-05d2c0f0.js">
+	<link rel="modulepreload" href="/elden-ring-planner/internal/immutable/start-0656be1a.js">
+	<link rel="modulepreload" href="/elden-ring-planner/internal/immutable/chunks/index-c3298593.js">
+	<link rel="modulepreload" href="/elden-ring-planner/internal/immutable/chunks/singletons-041aedb9.js">
 	</head>
 	<body class="gradient-background">
 		<div>
 		<script type="module" data-sveltekit-hydrate="45h">
-		import { start } from "/elden-ring-planner/internal/immutable/start-f74fe72b.js";
+		import { set_public_env, start } from "/elden-ring-planner/internal/immutable/start-0656be1a.js";
+
+		set_public_env({});
+
 		start({
 			target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
 			paths: {"base":"/elden-ring-planner","assets":"/elden-ring-planner"},
-			session: {},
 			route: true,
 			spa: true,
 			trailing_slash: "never",
 			hydrate: null
 		});
 	</script></div>
-
-		<!-- Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-X2NVEXL8YL"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-X2NVEXL8YL');
-		</script>
 	</body>
 </html>
