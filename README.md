@@ -2,15 +2,9 @@
 
 This tool allows you to visually plan your character's equipment, spells, and items for Elden Ring.
 
-## Contributing
-
-Found a bug, caught a typo, or want to contribute an improvement? Please create a feature branch and submit a pull request.
-
 ## Credits
 
 Image assets provided by SkeleMann: https://twitter.com/SkeleMann/status/1509149096329854985
-
----
 
 ## Developing
 
@@ -32,18 +26,10 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
----
+## Deployment
 
-## NOTES
+Deployment is now managed by Vercel. Push to Master and changes will deploy via CI/CD.
 
-### Setup Static Adapter:
+## Contributing
 
-https://github.com/sveltejs/kit/tree/master/packages/adapter-static
-
-### Github Pages
-
-https://svelteland.github.io/svelte-kit-blog-demo/deply-to-github/
-
-```bash
-npm run deploy
-```
+Found a bug, caught a typo, or want to contribute an improvement? Please create a feature branch and submit a pull request.
